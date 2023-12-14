@@ -8,10 +8,10 @@ namespace OOP_Assignment
         private string email;
         private bool GDPR = true; // Unsure as to what this variable is used for??
         private List<Purchase> purchases = new List<Purchase>();
-        public Customer(string Name, string Email)
+        public Customer(string name, string email)
         {
-            name = Name;
-            email = Email;
+            this.name = name;
+            this.email = email;
         }
 
         public string Name

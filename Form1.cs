@@ -4,13 +4,14 @@ namespace OOP_Assignment
 {
     public partial class Form1 : Form
     {
-        List<Item> items = new List<Item> { new Item("Bag", 12, 5, 10) };
+        List<Supplier> suppliers = new List<Supplier> { new Supplier("Jim's items") };
         List<Customer> customers = new List<Customer> { new Customer("Dave", "Dave@Dave.com") };
-
+        List<Item> items = new List<Item>();
         public Form1()
         {
             InitializeComponent();
 
+            items.Add(new Item("Bag", 12, 5, 10, suppliers[0]));
             itemsCombobox.Items.Add(items[0].Name);
             customerCombobox.Items.Add(customers[0].Name);
         }
@@ -46,6 +47,7 @@ namespace OOP_Assignment
         {
             Item item = items[itemsCombobox.SelectedIndex];
             stockTextbox.Text = item.Stock.ToString();
+            supplierTextbox.Text = item.Supplier.Name;
         }
 
         private void stockTextbox_TextChanged(object sender, EventArgs e)

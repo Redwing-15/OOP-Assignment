@@ -37,6 +37,8 @@
             restockCheckbox = new CheckBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            label6 = new Label();
+            supplierTextbox = new TextBox();
             label5 = new Label();
             purchaseAmountEntry = new NumericUpDown();
             purchaseButton = new Button();
@@ -129,6 +131,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(label6);
+            tabPage1.Controls.Add(supplierTextbox);
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(purchaseAmountEntry);
             tabPage1.Controls.Add(purchaseButton);
@@ -149,6 +153,23 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(81, 52);
+            label6.Name = "label6";
+            label6.Size = new Size(67, 20);
+            label6.TabIndex = 15;
+            label6.Text = "Supplier:";
+            // 
+            // supplierTextbox
+            // 
+            supplierTextbox.Location = new Point(154, 49);
+            supplierTextbox.Name = "supplierTextbox";
+            supplierTextbox.ReadOnly = true;
+            supplierTextbox.Size = new Size(125, 27);
+            supplierTextbox.TabIndex = 14;
             // 
             // label5
             // 
@@ -246,5 +267,7 @@
         private Button purchaseButton;
         private NumericUpDown purchaseAmountEntry;
         private Label label5;
+        private Label label6;
+        private TextBox supplierTextbox;
     }
 }

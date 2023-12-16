@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace OOP_Assignment
 {
     internal class Supplier
@@ -9,7 +7,6 @@ namespace OOP_Assignment
         public Supplier(string name)
         {
             this.name = name;
-            products.Add(new Item("Watch", 11, 15, 10, this.name));
         }
 
         public string Name

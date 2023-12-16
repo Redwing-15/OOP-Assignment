@@ -1,6 +1,3 @@
-using System.Diagnostics;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-
 namespace OOP_Assignment
 {
     internal class Purchase

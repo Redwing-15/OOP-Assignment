@@ -11,11 +11,8 @@ namespace OOP_Assignment
         {
             InitializeComponent();
 
-            foreach (Supplier supplier in suppliers)
-            {
-                items.AddRange(supplier.Products);
-            }
-
+            items.Add(new Clothing(10, "Red", "Top", "Pink top", 11, 15, 10, suppliers[0].Name));
+            suppliers[0].add_product(items[0]);
             foreach (Item item in items) itemsCombobox.Items.Add(item.Name);
             customerCombobox.Items.Add(customers[0].Name);
         }

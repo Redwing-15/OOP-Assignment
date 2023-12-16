@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace OOP_Assignment
 {
     internal class Customer

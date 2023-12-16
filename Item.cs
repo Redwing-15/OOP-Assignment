@@ -1,8 +1,6 @@
-using System.Diagnostics;
-
 namespace OOP_Assignment
 {
-    internal class Item
+    abstract class Item
     {
         private string name;
         private double price;

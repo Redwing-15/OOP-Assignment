@@ -8,12 +8,12 @@ namespace OOP_Assignment
         private double price;
         private int stock;
         private int stockOrderLevel;
-        private Supplier supplier;
-        public Item(string name, double price, int stock, int stockorderlevel, Supplier supplier)
+        private string supplier;
+        public Item(string name, double price, int stock, int stockorderlevel, string supplier)
         {
             this.name = name;
             this.price = price;
-            stock = Stock;
+            this.stock = stock;
             stockOrderLevel = stockorderlevel;
             this.supplier = supplier;
         }
@@ -38,7 +38,7 @@ namespace OOP_Assignment
             get { return stockOrderLevel; }
             set { stockOrderLevel = value; }
         }
-        public Supplier Supplier
+        public string Supplier
         {
             get { return supplier;}
             set { supplier = value; }

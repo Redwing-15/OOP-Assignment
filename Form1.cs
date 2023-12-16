@@ -11,26 +11,14 @@ namespace OOP_Assignment
         {
             InitializeComponent();
 
-            items.Add(new Item("Bag", 12, 5, 10, suppliers[0]));
-            itemsCombobox.Items.Add(items[0].Name);
+            foreach (Supplier supplier in suppliers)
+            {
+                items.AddRange(supplier.Products);
+            }
+
+            foreach (Item item in items) itemsCombobox.Items.Add(item.Name);
             customerCombobox.Items.Add(customers[0].Name);
         }
-
-        private void restockButton_Click(object sender, EventArgs e)
-        {
-            Item item = items[itemsCombobox.SelectedIndex];
-            // No need to limit restocks as of yet but code here incase
-            //if (item.Stock >= item.StockOrderLevel)
-            //{
-            //    Debug.WriteLine("Stock not at minimum level to require restock");
-            //    return;
-            //}
-
-            item.restock(Convert.ToInt32(restockAmountEntry.Text));
-
-            stockTextbox.Text = item.Stock.ToString();
-        }
-
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex == 0)
@@ -47,12 +35,11 @@ namespace OOP_Assignment
         {
             Item item = items[itemsCombobox.SelectedIndex];
             stockTextbox.Text = item.Stock.ToString();
-            supplierTextbox.Text = item.Supplier.Name;
+            supplierTextbox.Text = item.Supplier;
         }
 
         private void stockTextbox_TextChanged(object sender, EventArgs e)
         {
-            Debug.WriteLine("Textbox changed");
             Item item = items[itemsCombobox.SelectedIndex];
 
             purchaseAmountEntry.Maximum = item.Stock;
@@ -79,6 +66,21 @@ namespace OOP_Assignment
             }
 
             item.sell(customer, Convert.ToInt32(purchaseAmountEntry.Text));
+            stockTextbox.Text = item.Stock.ToString();
+        }
+
+        private void restockButton_Click(object sender, EventArgs e)
+        {
+            Item item = items[itemsCombobox.SelectedIndex];
+            // No need to limit restocks as of yet but code here incase
+            //if (item.Stock >= item.StockOrderLevel)
+            //{
+            //    Debug.WriteLine("Stock not at minimum level to require restock");
+            //    return;
+            //}
+
+            item.restock(Convert.ToInt32(restockAmountEntry.Text));
+
             stockTextbox.Text = item.Stock.ToString();
         }
     }

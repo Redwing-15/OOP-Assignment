@@ -28,42 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            itemsCombobox = new ComboBox();
+            T_itemsCombobox = new ComboBox();
             label1 = new Label();
             tabControl1 = new TabControl();
             transactionsPage = new TabPage();
-            purchaseTotal = new TextBox();
+            T_purchaseTotal = new TextBox();
             label7 = new Label();
             label6 = new Label();
-            purchasesTextbox = new TextBox();
-            itemInfoTextbox = new TextBox();
+            T_purchasesTextbox = new TextBox();
+            T_itemInfoTextbox = new TextBox();
             label5 = new Label();
-            purchaseAmountEntry = new NumericUpDown();
-            purchaseButton = new Button();
+            T_purchaseAmountEntry = new NumericUpDown();
+            T_purchaseButton = new Button();
             label4 = new Label();
-            customerCombobox = new ComboBox();
+            T_customerCombobox = new ComboBox();
             restockPage = new TabPage();
+            R_supplierSelectCombobox = new ComboBox();
+            label11 = new Label();
+            R_supplierTextbbox = new TextBox();
+            label10 = new Label();
+            label9 = new Label();
+            R_itemCombobox = new ComboBox();
+            label8 = new Label();
+            R_restockableItemsListbox = new ListBox();
             label3 = new Label();
-            restockCheckbox = new CheckBox();
-            stockTextbox = new TextBox();
-            restockButton = new Button();
+            R_restockCheckbox = new CheckBox();
+            R_stockTextbox = new TextBox();
+            R_restockButton = new Button();
             label2 = new Label();
-            restockAmountEntry = new NumericUpDown();
+            R_restockAmountEntry = new NumericUpDown();
             tabControl1.SuspendLayout();
             transactionsPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)purchaseAmountEntry).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)T_purchaseAmountEntry).BeginInit();
             restockPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)restockAmountEntry).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)R_restockAmountEntry).BeginInit();
             SuspendLayout();
             // 
-            // itemsCombobox
+            // T_itemsCombobox
             // 
-            itemsCombobox.FormattingEnabled = true;
-            itemsCombobox.Location = new Point(600, 22);
-            itemsCombobox.Name = "itemsCombobox";
-            itemsCombobox.Size = new Size(151, 28);
-            itemsCombobox.TabIndex = 0;
-            itemsCombobox.SelectedIndexChanged += itemsCombobox_SelectedIndexChanged;
+            T_itemsCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            T_itemsCombobox.FormattingEnabled = true;
+            T_itemsCombobox.Location = new Point(600, 22);
+            T_itemsCombobox.Name = "T_itemsCombobox";
+            T_itemsCombobox.Size = new Size(151, 28);
+            T_itemsCombobox.TabIndex = 0;
+            T_itemsCombobox.SelectedIndexChanged += itemsCombobox_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -89,17 +98,17 @@
             // transactionsPage
             // 
             transactionsPage.BackColor = SystemColors.Menu;
-            transactionsPage.Controls.Add(purchaseTotal);
+            transactionsPage.Controls.Add(T_purchaseTotal);
             transactionsPage.Controls.Add(label7);
             transactionsPage.Controls.Add(label6);
-            transactionsPage.Controls.Add(purchasesTextbox);
-            transactionsPage.Controls.Add(itemInfoTextbox);
+            transactionsPage.Controls.Add(T_purchasesTextbox);
+            transactionsPage.Controls.Add(T_itemInfoTextbox);
             transactionsPage.Controls.Add(label5);
-            transactionsPage.Controls.Add(purchaseAmountEntry);
-            transactionsPage.Controls.Add(purchaseButton);
+            transactionsPage.Controls.Add(T_purchaseAmountEntry);
+            transactionsPage.Controls.Add(T_purchaseButton);
             transactionsPage.Controls.Add(label4);
-            transactionsPage.Controls.Add(customerCombobox);
-            transactionsPage.Controls.Add(itemsCombobox);
+            transactionsPage.Controls.Add(T_customerCombobox);
+            transactionsPage.Controls.Add(T_itemsCombobox);
             transactionsPage.Controls.Add(label1);
             transactionsPage.Location = new Point(4, 29);
             transactionsPage.Name = "transactionsPage";
@@ -108,14 +117,14 @@
             transactionsPage.TabIndex = 0;
             transactionsPage.Text = "Transactions";
             // 
-            // purchaseTotal
+            // T_purchaseTotal
             // 
-            purchaseTotal.BackColor = SystemColors.Window;
-            purchaseTotal.Location = new Point(633, 229);
-            purchaseTotal.Name = "purchaseTotal";
-            purchaseTotal.ReadOnly = true;
-            purchaseTotal.Size = new Size(86, 27);
-            purchaseTotal.TabIndex = 20;
+            T_purchaseTotal.BackColor = SystemColors.Window;
+            T_purchaseTotal.Location = new Point(633, 229);
+            T_purchaseTotal.Name = "T_purchaseTotal";
+            T_purchaseTotal.ReadOnly = true;
+            T_purchaseTotal.Size = new Size(86, 27);
+            T_purchaseTotal.TabIndex = 20;
             // 
             // label7
             // 
@@ -135,26 +144,26 @@
             label6.TabIndex = 18;
             label6.Text = "Purchases:";
             // 
-            // purchasesTextbox
+            // T_purchasesTextbox
             // 
-            purchasesTextbox.BackColor = SystemColors.Window;
-            purchasesTextbox.Location = new Point(22, 76);
-            purchasesTextbox.Multiline = true;
-            purchasesTextbox.Name = "purchasesTextbox";
-            purchasesTextbox.ReadOnly = true;
-            purchasesTextbox.Size = new Size(259, 306);
-            purchasesTextbox.TabIndex = 17;
+            T_purchasesTextbox.BackColor = SystemColors.Window;
+            T_purchasesTextbox.Location = new Point(22, 76);
+            T_purchasesTextbox.Multiline = true;
+            T_purchasesTextbox.Name = "T_purchasesTextbox";
+            T_purchasesTextbox.ReadOnly = true;
+            T_purchasesTextbox.Size = new Size(259, 306);
+            T_purchasesTextbox.TabIndex = 17;
             // 
-            // itemInfoTextbox
+            // T_itemInfoTextbox
             // 
-            itemInfoTextbox.BackColor = SystemColors.Menu;
-            itemInfoTextbox.BorderStyle = BorderStyle.None;
-            itemInfoTextbox.Location = new Point(546, 66);
-            itemInfoTextbox.Multiline = true;
-            itemInfoTextbox.Name = "itemInfoTextbox";
-            itemInfoTextbox.ReadOnly = true;
-            itemInfoTextbox.Size = new Size(137, 125);
-            itemInfoTextbox.TabIndex = 16;
+            T_itemInfoTextbox.BackColor = SystemColors.Menu;
+            T_itemInfoTextbox.BorderStyle = BorderStyle.None;
+            T_itemInfoTextbox.Location = new Point(546, 66);
+            T_itemInfoTextbox.Multiline = true;
+            T_itemInfoTextbox.Name = "T_itemInfoTextbox";
+            T_itemInfoTextbox.ReadOnly = true;
+            T_itemInfoTextbox.Size = new Size(137, 125);
+            T_itemInfoTextbox.TabIndex = 16;
             // 
             // label5
             // 
@@ -165,24 +174,24 @@
             label5.TabIndex = 13;
             label5.Text = "Amount:";
             // 
-            // purchaseAmountEntry
+            // T_purchaseAmountEntry
             // 
-            purchaseAmountEntry.Location = new Point(633, 197);
-            purchaseAmountEntry.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
-            purchaseAmountEntry.Name = "purchaseAmountEntry";
-            purchaseAmountEntry.Size = new Size(55, 27);
-            purchaseAmountEntry.TabIndex = 12;
-            purchaseAmountEntry.ValueChanged += purchaseAmountEntry_ValueChanged;
+            T_purchaseAmountEntry.Location = new Point(633, 197);
+            T_purchaseAmountEntry.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
+            T_purchaseAmountEntry.Name = "T_purchaseAmountEntry";
+            T_purchaseAmountEntry.Size = new Size(55, 27);
+            T_purchaseAmountEntry.TabIndex = 12;
+            T_purchaseAmountEntry.ValueChanged += purchaseAmountEntry_ValueChanged;
             // 
-            // purchaseButton
+            // T_purchaseButton
             // 
-            purchaseButton.Location = new Point(565, 262);
-            purchaseButton.Name = "purchaseButton";
-            purchaseButton.Size = new Size(94, 29);
-            purchaseButton.TabIndex = 11;
-            purchaseButton.Text = "Purchase";
-            purchaseButton.UseVisualStyleBackColor = true;
-            purchaseButton.Click += purchaseButton_Click;
+            T_purchaseButton.Location = new Point(565, 262);
+            T_purchaseButton.Name = "T_purchaseButton";
+            T_purchaseButton.Size = new Size(94, 29);
+            T_purchaseButton.TabIndex = 11;
+            T_purchaseButton.Text = "Purchase";
+            T_purchaseButton.UseVisualStyleBackColor = true;
+            T_purchaseButton.Click += purchaseButton_Click;
             // 
             // label4
             // 
@@ -193,23 +202,32 @@
             label4.TabIndex = 10;
             label4.Text = "Customer:";
             // 
-            // customerCombobox
+            // T_customerCombobox
             // 
-            customerCombobox.FormattingEnabled = true;
-            customerCombobox.Location = new Point(115, 19);
-            customerCombobox.Name = "customerCombobox";
-            customerCombobox.Size = new Size(151, 28);
-            customerCombobox.TabIndex = 9;
-            customerCombobox.SelectedIndexChanged += customerCombobox_SelectedIndexChanged_1;
+            T_customerCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            T_customerCombobox.FormattingEnabled = true;
+            T_customerCombobox.Location = new Point(115, 19);
+            T_customerCombobox.Name = "T_customerCombobox";
+            T_customerCombobox.Size = new Size(151, 28);
+            T_customerCombobox.TabIndex = 9;
+            T_customerCombobox.SelectedIndexChanged += customerCombobox_SelectedIndexChanged_1;
             // 
             // restockPage
             // 
+            restockPage.Controls.Add(R_supplierSelectCombobox);
+            restockPage.Controls.Add(label11);
+            restockPage.Controls.Add(R_supplierTextbbox);
+            restockPage.Controls.Add(label10);
+            restockPage.Controls.Add(label9);
+            restockPage.Controls.Add(R_itemCombobox);
+            restockPage.Controls.Add(label8);
+            restockPage.Controls.Add(R_restockableItemsListbox);
             restockPage.Controls.Add(label3);
-            restockPage.Controls.Add(restockCheckbox);
-            restockPage.Controls.Add(stockTextbox);
-            restockPage.Controls.Add(restockButton);
+            restockPage.Controls.Add(R_restockCheckbox);
+            restockPage.Controls.Add(R_stockTextbox);
+            restockPage.Controls.Add(R_restockButton);
             restockPage.Controls.Add(label2);
-            restockPage.Controls.Add(restockAmountEntry);
+            restockPage.Controls.Add(R_restockAmountEntry);
             restockPage.Location = new Point(4, 29);
             restockPage.Name = "restockPage";
             restockPage.Padding = new Padding(3);
@@ -218,59 +236,136 @@
             restockPage.Text = "Restock";
             restockPage.UseVisualStyleBackColor = true;
             // 
+            // R_supplierSelectCombobox
+            // 
+            R_supplierSelectCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            R_supplierSelectCombobox.FormattingEnabled = true;
+            R_supplierSelectCombobox.Items.AddRange(new object[] { "<None>" });
+            R_supplierSelectCombobox.Location = new Point(6, 39);
+            R_supplierSelectCombobox.Name = "R_supplierSelectCombobox";
+            R_supplierSelectCombobox.Size = new Size(151, 28);
+            R_supplierSelectCombobox.TabIndex = 22;
+            R_supplierSelectCombobox.SelectedIndexChanged += R_supplierSelectCombobox_SelectedIndexChanged;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(6, 16);
+            label11.Name = "label11";
+            label11.Size = new Size(136, 20);
+            label11.TabIndex = 21;
+            label11.Text = "Supplier (Optional)";
+            // 
+            // R_supplierTextbbox
+            // 
+            R_supplierTextbbox.BackColor = SystemColors.Window;
+            R_supplierTextbbox.Location = new Point(597, 45);
+            R_supplierTextbbox.Name = "R_supplierTextbbox";
+            R_supplierTextbbox.ReadOnly = true;
+            R_supplierTextbbox.Size = new Size(125, 27);
+            R_supplierTextbbox.TabIndex = 20;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(524, 45);
+            label10.Name = "label10";
+            label10.Size = new Size(67, 20);
+            label10.TabIndex = 19;
+            label10.Text = "Supplier:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(524, 13);
+            label9.Name = "label9";
+            label9.Size = new Size(42, 20);
+            label9.TabIndex = 18;
+            label9.Text = "Item:";
+            // 
+            // R_itemCombobox
+            // 
+            R_itemCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            R_itemCombobox.FormattingEnabled = true;
+            R_itemCombobox.Location = new Point(597, 13);
+            R_itemCombobox.Name = "R_itemCombobox";
+            R_itemCombobox.Size = new Size(151, 28);
+            R_itemCombobox.TabIndex = 17;
+            R_itemCombobox.SelectedIndexChanged += R_itemCombobox_SelectedIndexChanged;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(3, 70);
+            label8.Name = "label8";
+            label8.Size = new Size(163, 20);
+            label8.TabIndex = 16;
+            label8.Text = "Items requiring restock:";
+            // 
+            // R_restockableItemsListbox
+            // 
+            R_restockableItemsListbox.FormattingEnabled = true;
+            R_restockableItemsListbox.Items.AddRange(new object[] { "asd", "dsa", "adg" });
+            R_restockableItemsListbox.Location = new Point(6, 93);
+            R_restockableItemsListbox.Name = "R_restockableItemsListbox";
+            R_restockableItemsListbox.Size = new Size(215, 304);
+            R_restockableItemsListbox.TabIndex = 15;
+            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(271, 150);
+            label3.Location = new Point(524, 81);
             label3.Name = "label3";
             label3.Size = new Size(48, 20);
             label3.TabIndex = 14;
             label3.Text = "Stock:";
             // 
-            // restockCheckbox
+            // R_restockCheckbox
             // 
-            restockCheckbox.AutoCheck = false;
-            restockCheckbox.AutoSize = true;
-            restockCheckbox.Location = new Point(375, 150);
-            restockCheckbox.Name = "restockCheckbox";
-            restockCheckbox.Size = new Size(146, 24);
-            restockCheckbox.TabIndex = 13;
-            restockCheckbox.Text = "Requires restock?";
-            restockCheckbox.UseVisualStyleBackColor = true;
+            R_restockCheckbox.AutoCheck = false;
+            R_restockCheckbox.AutoSize = true;
+            R_restockCheckbox.Location = new Point(640, 81);
+            R_restockCheckbox.Name = "R_restockCheckbox";
+            R_restockCheckbox.Size = new Size(146, 24);
+            R_restockCheckbox.TabIndex = 13;
+            R_restockCheckbox.Text = "Requires restock?";
+            R_restockCheckbox.UseVisualStyleBackColor = true;
             // 
-            // stockTextbox
+            // R_stockTextbox
             // 
-            stockTextbox.Location = new Point(325, 147);
-            stockTextbox.Name = "stockTextbox";
-            stockTextbox.ReadOnly = true;
-            stockTextbox.Size = new Size(37, 27);
-            stockTextbox.TabIndex = 12;
+            R_stockTextbox.Location = new Point(595, 78);
+            R_stockTextbox.Name = "R_stockTextbox";
+            R_stockTextbox.ReadOnly = true;
+            R_stockTextbox.Size = new Size(37, 27);
+            R_stockTextbox.TabIndex = 12;
+            R_stockTextbox.TextChanged += R_stockTextbox_TextChanged;
             // 
-            // restockButton
+            // R_restockButton
             // 
-            restockButton.Location = new Point(347, 241);
-            restockButton.Name = "restockButton";
-            restockButton.Size = new Size(94, 29);
-            restockButton.TabIndex = 9;
-            restockButton.Text = "Restock";
-            restockButton.UseVisualStyleBackColor = true;
+            R_restockButton.Location = new Point(595, 164);
+            R_restockButton.Name = "R_restockButton";
+            R_restockButton.Size = new Size(94, 29);
+            R_restockButton.TabIndex = 9;
+            R_restockButton.Text = "Restock";
+            R_restockButton.UseVisualStyleBackColor = true;
+            R_restockButton.Click += R_restockButton_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(325, 210);
+            label2.Location = new Point(524, 122);
             label2.Name = "label2";
             label2.Size = new Size(65, 20);
             label2.TabIndex = 11;
             label2.Text = "Amount:";
             // 
-            // restockAmountEntry
+            // R_restockAmountEntry
             // 
-            restockAmountEntry.Increment = new decimal(new int[] { 10, 0, 0, 0 });
-            restockAmountEntry.Location = new Point(396, 208);
-            restockAmountEntry.Name = "restockAmountEntry";
-            restockAmountEntry.Size = new Size(60, 27);
-            restockAmountEntry.TabIndex = 10;
+            R_restockAmountEntry.Increment = new decimal(new int[] { 10, 0, 0, 0 });
+            R_restockAmountEntry.Location = new Point(597, 120);
+            R_restockAmountEntry.Name = "R_restockAmountEntry";
+            R_restockAmountEntry.Size = new Size(60, 27);
+            R_restockAmountEntry.TabIndex = 10;
             // 
             // Form1
             // 
@@ -283,35 +378,43 @@
             tabControl1.ResumeLayout(false);
             transactionsPage.ResumeLayout(false);
             transactionsPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)purchaseAmountEntry).EndInit();
+            ((System.ComponentModel.ISupportInitialize)T_purchaseAmountEntry).EndInit();
             restockPage.ResumeLayout(false);
             restockPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)restockAmountEntry).EndInit();
+            ((System.ComponentModel.ISupportInitialize)R_restockAmountEntry).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ComboBox itemsCombobox;
+        private ComboBox T_itemsCombobox;
         private Label label1;
         private TabControl tabControl1;
         private TabPage transactionsPage;
         private TabPage restockPage;
         private Label label4;
-        private ComboBox customerCombobox;
-        private Button purchaseButton;
-        private NumericUpDown purchaseAmountEntry;
+        private ComboBox T_customerCombobox;
+        private Button T_purchaseButton;
+        private NumericUpDown T_purchaseAmountEntry;
         private Label label5;
         private Label label3;
-        private CheckBox restockCheckbox;
-        private TextBox stockTextbox;
-        private Button restockButton;
+        private CheckBox R_restockCheckbox;
+        private TextBox R_stockTextbox;
+        private Button R_restockButton;
         private Label label2;
-        private NumericUpDown restockAmountEntry;
-        private TextBox itemInfoTextbox;
+        private NumericUpDown R_restockAmountEntry;
+        private TextBox T_itemInfoTextbox;
         private Label label6;
-        private TextBox purchasesTextbox;
-        private TextBox purchaseTotal;
+        private TextBox T_purchasesTextbox;
+        private TextBox T_purchaseTotal;
         private Label label7;
+        private ListBox R_restockableItemsListbox;
+        private Label label8;
+        private TextBox R_supplierTextbbox;
+        private Label label10;
+        private Label label9;
+        private ComboBox R_itemCombobox;
+        private ComboBox R_supplierSelectCombobox;
+        private Label label11;
     }
 }

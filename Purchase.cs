@@ -27,7 +27,7 @@ namespace OOP_Assignment
         {
             get { return salePrice; }
         }
-        public int Amount
+        public int Quantity
         {
             get { return saleQuantity; }
         }

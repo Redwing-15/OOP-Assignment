@@ -12,7 +12,7 @@ namespace OOP_Assignment
             this.name = name;
             this.price = price;
             this.stock = stock;
-            stockOrderLevel = stockorderlevel;
+            this.stockOrderLevel = stockorderlevel;
             this.supplier = supplier;
         }
 

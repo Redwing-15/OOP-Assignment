@@ -5,11 +5,14 @@ namespace OOP_Assignment
         private string name;
         private string email;
         private bool GDPR = true; // Unsure as to what this variable is used for??
+        private double balance;
         private List<Purchase> purchases = new List<Purchase>();
-        public Customer(string name, string email)
+
+        public Customer(string name, string email, int balance)
         {
             this.name = name;
             this.email = email;
+            this.balance = balance;
         }
 
         public string Name
@@ -22,6 +25,11 @@ namespace OOP_Assignment
             get { return email; }
             set { email = value; }
         }
+        public double Balance
+        {
+            get { return balance; }
+            set { balance = value; }
+        }
         public List<Purchase> Purchases
         {
             get { return purchases; }
@@ -30,6 +38,7 @@ namespace OOP_Assignment
         public void add_purchase(Purchase purchase)
         {
             purchases.Add(purchase);
+            balance -= purchase.Price * purchase.Quantity;
         }
     }
 }

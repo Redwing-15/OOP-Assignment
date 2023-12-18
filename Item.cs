@@ -41,19 +41,5 @@ namespace OOP_Assignment
             get { return supplier;}
             set { supplier = value; }
         }
-
-        public void restock(int amount)
-        {
-            stock += amount;
-            return;
-        }
-
-        public void sell(Customer customer, int amount)
-        {
-            Purchase purchase = new Purchase(name, DateTime.Now.ToString(), price, amount);
-            customer.add_purchase(purchase);
-
-            stock -= amount;
-        }
     }
 }

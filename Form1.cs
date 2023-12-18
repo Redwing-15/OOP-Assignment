@@ -1,4 +1,6 @@
+// NEED TO MAKE SYSTEM CLASS AND REWORK BOTH UPDATE PAGE FUNCTIONS OUT OF THE SYSTEM
 using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace OOP_Assignment
 {
@@ -21,31 +23,42 @@ namespace OOP_Assignment
             }
             else if (tabControl1.SelectedIndex == 1)
             {
-                //T_itemsCombobox.Items.Clear();
-                //foreach (Item entry in items)
-                //{
-                //    T_itemsCombobox.Items.Add(entry.Name);
-                //}
-
                 UpdateRestock(true);
             }
         }
 
-        private void itemsCombobox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UpdateTransactions(false);
-        }
-        private void customerCombobox_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void T_itemsCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateTransactions(false);
         }
 
-        private void purchaseAmountEntry_ValueChanged(object sender, EventArgs e)
+        private void T_customerCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            T_addFundsEntry.Value = 0;
             UpdateTransactions(false);
         }
 
-        private void purchaseButton_Click(object sender, EventArgs e)
+        private void T_addFundsButton_Click(object sender, EventArgs e)
+        {
+            Customer customer = customers[T_customerCombobox.SelectedIndex];
+            customer.Balance += (double)T_addFundsEntry.Value;
+
+            T_addFundsEntry.Value = 0;
+            UpdateTransactions(false);
+        }
+
+        private void T_purchaseAmountEntry_ValueChanged(object sender, EventArgs e)
+        {
+            if (T_itemsCombobox.SelectedIndex == 0)
+            {
+                T_purchaseTotal.Text = "";
+                return;
+            }
+            Item item = items[T_itemsCombobox.SelectedIndex];
+            T_purchaseTotal.Text = (item.Price * Convert.ToDouble(T_purchaseAmountEntry.Value)).ToString("£0.00");
+        }
+
+        private void T_purchaseButton_Click(object sender, EventArgs e)
         {
             Customer customer = customers[T_customerCombobox.SelectedIndex];
             Item item = items[T_itemsCombobox.SelectedIndex];
@@ -55,9 +68,18 @@ namespace OOP_Assignment
                 Debug.WriteLine("Not enough stock");
                 return;
             }
+            Debug.WriteLine($"Bal: {customer.Balance} Price: {item.Price * (double)T_purchaseAmountEntry.Value}");
+            if (customer.Balance < item.Price*(double)T_purchaseAmountEntry.Value)
+            {
+                Debug.WriteLine("Not enough funds");
+                return;
+            }
 
-            item.sell(customer, Convert.ToInt32(T_purchaseAmountEntry.Text));
-            T_purchaseAmountEntry.Value = 0;
+            Purchase purchase = new Purchase(item.Name, DateTime.Now.ToString(), item.Price, (int)T_purchaseAmountEntry.Value);
+            customer.add_purchase(purchase);
+            item.Stock -= purchase.Quantity;
+
+            T_purchaseAmountEntry.Value = 1;
             UpdateTransactions(false);
         }
 
@@ -88,16 +110,8 @@ namespace OOP_Assignment
         private void R_restockButton_Click(object sender, EventArgs e)
         {
             Item item = items[R_itemCombobox.SelectedIndex];
-            // No need to limit restocks as of yet but code here incase
-            //if (item.Stock >= item.StockOrderLevel)
-            //{
-            //    Debug.WriteLine("Stock not at minimum level to require restock");
-            //    return;
-            //}
+            item.Stock += Convert.ToInt32(R_restockAmountEntry.Text);
 
-            item.restock(Convert.ToInt32(R_restockAmountEntry.Text));
-
-            //R_stockTextbox.Text = item.Stock.ToString();
             UpdateRestock(false);
         }
 
@@ -118,6 +132,7 @@ namespace OOP_Assignment
                 }
 
                 T_itemInfoTextbox.Text = "";
+                T_purchaseAmountEntry.Minimum = 0;
                 T_purchaseAmountEntry.Value = 0;
                 T_purchaseTotal.Text = "";
             }
@@ -126,13 +141,26 @@ namespace OOP_Assignment
                 Item item = items[T_itemsCombobox.SelectedIndex];
                 T_itemInfoTextbox.Text = item.ToString();
                 T_purchaseAmountEntry.Maximum = item.Stock;
-                T_purchaseTotal.Text = (item.Price * Convert.ToDouble(T_purchaseAmountEntry.Value)).ToString("£0.00");
+                if (item.Stock == 0) T_purchaseAmountEntry.Minimum = 0;
+                else T_purchaseAmountEntry.Minimum = 1;
             }
 
             T_purchasesTextbox.Text = "";
-            if (T_customerCombobox.SelectedIndex != -1)
+            if (T_customerCombobox.SelectedIndex == -1)
+            {
+                T_customerCombobox.Items.Clear();
+                foreach (Customer customer in customers)
+                {
+                    T_customerCombobox.Items.Add(customer.Name);
+                }
+                T_balanceTextbox.Text = "";
+                T_addFundsEntry.Value = 0;
+            }
+            else
             {
                 Customer customer = customers[T_customerCombobox.SelectedIndex];
+                T_balanceTextbox.Text = $"£{customer.Balance.ToString("0.00")}";
+
                 foreach (Purchase purchase in customer.Purchases)
                 {
                     T_purchasesTextbox.Text += ($"{purchase.Item} X{purchase.Quantity}:  £{(purchase.Price * purchase.Quantity).ToString("0.00")}\r\n");
@@ -193,17 +221,18 @@ namespace OOP_Assignment
         // Creates all pre-existing instances of items, customers etc.
         private void Populate()
         {
-            customers.Add(new Customer("Dave", "Dave@Dave.com"));
+            customers.Add(new Customer("Reece", "rf287@canterbury.ac.uk", 50));
+            customers.Add(new Customer("Tina", "tina.eager@canterbury.ac.uk", 1500));
+
             suppliers.Add(new Supplier("Jim's items"));
             suppliers.Add(new Supplier("MIKE"));
 
-            suppliers[0].add_product(new Clothing(10, "Red", "Top", "Red top", 11, 15, 10, "Jim's items"));
+            suppliers[0].add_product(new Clothing(10, "Red", "Top", "Red top", 15, 15, 10, "Jim's items"));
             suppliers[0].add_product(new Shoe(9, "Racer", "MIKE Racers", 65, 10, 20, "MIKE"));
 
             foreach (Supplier supplier in suppliers) items.AddRange(supplier.Products);
-            foreach (Item item in items) T_itemsCombobox.Items.Add(item.Name);
 
-            T_customerCombobox.Items.Add(customers[0].Name);
+            UpdateTransactions(false);
         }
     }
 }

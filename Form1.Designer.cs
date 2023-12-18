@@ -32,6 +32,11 @@
             label1 = new Label();
             tabControl1 = new TabControl();
             transactionsPage = new TabPage();
+            T_addFundsButton = new Button();
+            T_addFundsEntry = new NumericUpDown();
+            T_balanceTextbox = new TextBox();
+            label13 = new Label();
+            label12 = new Label();
             T_purchaseTotal = new TextBox();
             label7 = new Label();
             label6 = new Label();
@@ -59,6 +64,7 @@
             R_restockAmountEntry = new NumericUpDown();
             tabControl1.SuspendLayout();
             transactionsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)T_addFundsEntry).BeginInit();
             ((System.ComponentModel.ISupportInitialize)T_purchaseAmountEntry).BeginInit();
             restockPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)R_restockAmountEntry).BeginInit();
@@ -72,7 +78,7 @@
             T_itemsCombobox.Name = "T_itemsCombobox";
             T_itemsCombobox.Size = new Size(151, 28);
             T_itemsCombobox.TabIndex = 0;
-            T_itemsCombobox.SelectedIndexChanged += itemsCombobox_SelectedIndexChanged;
+            T_itemsCombobox.SelectedIndexChanged += T_itemsCombobox_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -98,6 +104,11 @@
             // transactionsPage
             // 
             transactionsPage.BackColor = SystemColors.Menu;
+            transactionsPage.Controls.Add(T_addFundsButton);
+            transactionsPage.Controls.Add(T_addFundsEntry);
+            transactionsPage.Controls.Add(T_balanceTextbox);
+            transactionsPage.Controls.Add(label13);
+            transactionsPage.Controls.Add(label12);
             transactionsPage.Controls.Add(T_purchaseTotal);
             transactionsPage.Controls.Add(label7);
             transactionsPage.Controls.Add(label6);
@@ -116,6 +127,54 @@
             transactionsPage.Size = new Size(792, 417);
             transactionsPage.TabIndex = 0;
             transactionsPage.Text = "Transactions";
+            // 
+            // T_addFundsButton
+            // 
+            T_addFundsButton.Location = new Point(55, 122);
+            T_addFundsButton.Name = "T_addFundsButton";
+            T_addFundsButton.Size = new Size(94, 29);
+            T_addFundsButton.TabIndex = 25;
+            T_addFundsButton.Text = "Add Funds";
+            T_addFundsButton.UseVisualStyleBackColor = true;
+            T_addFundsButton.Click += T_addFundsButton_Click;
+            // 
+            // T_addFundsEntry
+            // 
+            T_addFundsEntry.DecimalPlaces = 2;
+            T_addFundsEntry.Location = new Point(115, 89);
+            T_addFundsEntry.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            T_addFundsEntry.Name = "T_addFundsEntry";
+            T_addFundsEntry.Size = new Size(88, 27);
+            T_addFundsEntry.TabIndex = 24;
+            T_addFundsEntry.TextAlign = HorizontalAlignment.Right;
+            T_addFundsEntry.ThousandsSeparator = true;
+            // 
+            // T_balanceTextbox
+            // 
+            T_balanceTextbox.BackColor = SystemColors.Window;
+            T_balanceTextbox.Location = new Point(115, 53);
+            T_balanceTextbox.Name = "T_balanceTextbox";
+            T_balanceTextbox.ReadOnly = true;
+            T_balanceTextbox.Size = new Size(125, 27);
+            T_balanceTextbox.TabIndex = 23;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(22, 91);
+            label13.Name = "label13";
+            label13.Size = new Size(82, 20);
+            label13.TabIndex = 22;
+            label13.Text = "Add Funds:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(22, 56);
+            label12.Name = "label12";
+            label12.Size = new Size(64, 20);
+            label12.TabIndex = 21;
+            label12.Text = "Balance:";
             // 
             // T_purchaseTotal
             // 
@@ -138,7 +197,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(22, 53);
+            label6.Location = new Point(23, 162);
             label6.Name = "label6";
             label6.Size = new Size(76, 20);
             label6.TabIndex = 18;
@@ -147,11 +206,12 @@
             // T_purchasesTextbox
             // 
             T_purchasesTextbox.BackColor = SystemColors.Window;
-            T_purchasesTextbox.Location = new Point(22, 76);
+            T_purchasesTextbox.Location = new Point(23, 185);
             T_purchasesTextbox.Multiline = true;
             T_purchasesTextbox.Name = "T_purchasesTextbox";
             T_purchasesTextbox.ReadOnly = true;
-            T_purchasesTextbox.Size = new Size(259, 306);
+            T_purchasesTextbox.ScrollBars = ScrollBars.Vertical;
+            T_purchasesTextbox.Size = new Size(259, 224);
             T_purchasesTextbox.TabIndex = 17;
             // 
             // T_itemInfoTextbox
@@ -181,7 +241,8 @@
             T_purchaseAmountEntry.Name = "T_purchaseAmountEntry";
             T_purchaseAmountEntry.Size = new Size(55, 27);
             T_purchaseAmountEntry.TabIndex = 12;
-            T_purchaseAmountEntry.ValueChanged += purchaseAmountEntry_ValueChanged;
+            T_purchaseAmountEntry.TextAlign = HorizontalAlignment.Right;
+            T_purchaseAmountEntry.ValueChanged += T_purchaseAmountEntry_ValueChanged;
             // 
             // T_purchaseButton
             // 
@@ -191,7 +252,7 @@
             T_purchaseButton.TabIndex = 11;
             T_purchaseButton.Text = "Purchase";
             T_purchaseButton.UseVisualStyleBackColor = true;
-            T_purchaseButton.Click += purchaseButton_Click;
+            T_purchaseButton.Click += T_purchaseButton_Click;
             // 
             // label4
             // 
@@ -210,7 +271,7 @@
             T_customerCombobox.Name = "T_customerCombobox";
             T_customerCombobox.Size = new Size(151, 28);
             T_customerCombobox.TabIndex = 9;
-            T_customerCombobox.SelectedIndexChanged += customerCombobox_SelectedIndexChanged_1;
+            T_customerCombobox.SelectedIndexChanged += T_customerCombobox_SelectedIndexChanged;
             // 
             // restockPage
             // 
@@ -305,7 +366,7 @@
             // R_restockableItemsListbox
             // 
             R_restockableItemsListbox.FormattingEnabled = true;
-            R_restockableItemsListbox.Items.AddRange(new object[] { "asd", "dsa", "adg" });
+            R_restockableItemsListbox.Items.AddRange(new object[] { " " });
             R_restockableItemsListbox.Location = new Point(6, 93);
             R_restockableItemsListbox.Name = "R_restockableItemsListbox";
             R_restockableItemsListbox.Size = new Size(215, 304);
@@ -366,6 +427,7 @@
             R_restockAmountEntry.Name = "R_restockAmountEntry";
             R_restockAmountEntry.Size = new Size(60, 27);
             R_restockAmountEntry.TabIndex = 10;
+            R_restockAmountEntry.TextAlign = HorizontalAlignment.Right;
             // 
             // Form1
             // 
@@ -378,6 +440,7 @@
             tabControl1.ResumeLayout(false);
             transactionsPage.ResumeLayout(false);
             transactionsPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)T_addFundsEntry).EndInit();
             ((System.ComponentModel.ISupportInitialize)T_purchaseAmountEntry).EndInit();
             restockPage.ResumeLayout(false);
             restockPage.PerformLayout();
@@ -416,5 +479,10 @@
         private ComboBox R_itemCombobox;
         private ComboBox R_supplierSelectCombobox;
         private Label label11;
+        private Button T_addFundsButton;
+        private NumericUpDown T_addFundsEntry;
+        private TextBox T_balanceTextbox;
+        private Label label13;
+        private Label label12;
     }
 }

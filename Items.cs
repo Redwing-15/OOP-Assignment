@@ -1,7 +1,3 @@
-using System.Diagnostics;
-using System.Drawing;
-using System.Xml.Linq;
-
 namespace OOP_Assignment
 {
     class Clothing : Item

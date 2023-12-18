@@ -4,7 +4,6 @@ namespace OOP_Assignment
     {
         private string name;
         private string email;
-        private bool GDPR = true; // Unsure as to what this variable is used for??
         private double balance;
         private List<Purchase> purchases = new List<Purchase>();
 

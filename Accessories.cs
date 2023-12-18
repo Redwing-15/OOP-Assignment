@@ -1,5 +1,3 @@
-using System.Drawing;
-
 namespace OOP_Assignment
 {
     class Bag : Accessory

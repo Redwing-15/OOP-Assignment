@@ -3,7 +3,7 @@ namespace OOP_Assignment
     internal class Purchase
     {
         private string item;
-        private string date; // Needs to be DateTime, will implement when possible
+        private string date;
         private double price;
         private int quantity;
 
@@ -25,8 +25,7 @@ namespace OOP_Assignment
         }
         public double Price
         {
-            get { return 
-                    price; }
+            get { return price; }
         }
         public int Quantity
         {

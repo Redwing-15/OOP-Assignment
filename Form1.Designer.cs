@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            T_itemsCombobox = new ComboBox();
+            T_itemCombobox = new ComboBox();
             label1 = new Label();
             tabControl1 = new TabControl();
             transactionsPage = new TabPage();
@@ -70,15 +70,15 @@
             ((System.ComponentModel.ISupportInitialize)R_restockAmountEntry).BeginInit();
             SuspendLayout();
             // 
-            // T_itemsCombobox
+            // T_itemCombobox
             // 
-            T_itemsCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
-            T_itemsCombobox.FormattingEnabled = true;
-            T_itemsCombobox.Location = new Point(600, 22);
-            T_itemsCombobox.Name = "T_itemsCombobox";
-            T_itemsCombobox.Size = new Size(151, 28);
-            T_itemsCombobox.TabIndex = 0;
-            T_itemsCombobox.SelectedIndexChanged += T_itemsCombobox_SelectedIndexChanged;
+            T_itemCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            T_itemCombobox.FormattingEnabled = true;
+            T_itemCombobox.Location = new Point(600, 22);
+            T_itemCombobox.Name = "T_itemCombobox";
+            T_itemCombobox.Size = new Size(151, 28);
+            T_itemCombobox.TabIndex = 0;
+            T_itemCombobox.SelectedIndexChanged += T_itemsCombobox_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -119,7 +119,7 @@
             transactionsPage.Controls.Add(T_purchaseButton);
             transactionsPage.Controls.Add(label4);
             transactionsPage.Controls.Add(T_customerCombobox);
-            transactionsPage.Controls.Add(T_itemsCombobox);
+            transactionsPage.Controls.Add(T_itemCombobox);
             transactionsPage.Controls.Add(label1);
             transactionsPage.Location = new Point(4, 29);
             transactionsPage.Name = "transactionsPage";
@@ -144,7 +144,7 @@
             T_addFundsEntry.Location = new Point(115, 89);
             T_addFundsEntry.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             T_addFundsEntry.Name = "T_addFundsEntry";
-            T_addFundsEntry.Size = new Size(88, 27);
+            T_addFundsEntry.Size = new Size(105, 27);
             T_addFundsEntry.TabIndex = 24;
             T_addFundsEntry.TextAlign = HorizontalAlignment.Right;
             T_addFundsEntry.ThousandsSeparator = true;
@@ -155,7 +155,7 @@
             T_balanceTextbox.Location = new Point(115, 53);
             T_balanceTextbox.Name = "T_balanceTextbox";
             T_balanceTextbox.ReadOnly = true;
-            T_balanceTextbox.Size = new Size(125, 27);
+            T_balanceTextbox.Size = new Size(105, 27);
             T_balanceTextbox.TabIndex = 23;
             // 
             // label13
@@ -211,7 +211,7 @@
             T_purchasesTextbox.Name = "T_purchasesTextbox";
             T_purchasesTextbox.ReadOnly = true;
             T_purchasesTextbox.ScrollBars = ScrollBars.Vertical;
-            T_purchasesTextbox.Size = new Size(259, 224);
+            T_purchasesTextbox.Size = new Size(467, 224);
             T_purchasesTextbox.TabIndex = 17;
             // 
             // T_itemInfoTextbox
@@ -371,6 +371,7 @@
             R_restockableItemsListbox.Name = "R_restockableItemsListbox";
             R_restockableItemsListbox.Size = new Size(215, 304);
             R_restockableItemsListbox.TabIndex = 15;
+            R_restockableItemsListbox.SelectedIndexChanged += R_restockableItemsListbox_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -422,7 +423,7 @@
             // 
             // R_restockAmountEntry
             // 
-            R_restockAmountEntry.Increment = new decimal(new int[] { 10, 0, 0, 0 });
+            R_restockAmountEntry.Increment = new decimal(new int[] { 5, 0, 0, 0 });
             R_restockAmountEntry.Location = new Point(597, 120);
             R_restockAmountEntry.Name = "R_restockAmountEntry";
             R_restockAmountEntry.Size = new Size(60, 27);
@@ -450,7 +451,7 @@
 
         #endregion
 
-        private ComboBox T_itemsCombobox;
+        private ComboBox T_itemCombobox;
         private Label label1;
         private TabControl tabControl1;
         private TabPage transactionsPage;

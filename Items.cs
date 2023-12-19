@@ -2,13 +2,13 @@ namespace OOP_Assignment
 {
     class Clothing : Item
     {
-        private int size;
+        private int size; // XS, S, M, L, XL, XXL
         private string colour;
-        private string style; //Shorts, Capris, Leggings, Vests, Tops, Jackets
+        private string style; // Shorts, Capris, Leggings, Vests, Tops, Jackets
 
         // This looks messy, interfaces will possibly fix this??
-        public Clothing(int size, string colour, string style, string name, double price, int stock, int stockorderlevel, string supplier)
-            : base(name, price, stock, stockorderlevel, supplier)
+        public Clothing(int size, string colour, string style, string name, double price, int stockorderlevel, string supplier)
+            : base(name, price, stockorderlevel, supplier)
         {
             this.size = size;
             this.colour = colour;
@@ -47,11 +47,11 @@ namespace OOP_Assignment
     class Shoe : Item
     {
         private int size;
-        private string type; //Racer, Stability, Neutral, Trail, Track
+        private string type; // Racer, Stability, Neutral, Trail, Track
 
         // This looks messy, interfaces will possibly fix this??
-        public Shoe(int size, string type, string name, double price, int stock, int stockorderlevel, string supplier)
-            : base(name, price, stock, stockorderlevel, supplier)
+        public Shoe(int size, string type, string name, double price, int stockorderlevel, string supplier)
+            : base(name, price, stockorderlevel, supplier)
         {
             this.size = size;
             this.type = type;
@@ -83,8 +83,8 @@ namespace OOP_Assignment
     abstract class Accessory : Item
     {
         private string accessoryType;
-        public Accessory(string accessoryType, string name, double price, int stock, int stockorderlevel, string supplier)
-            : base(name, price, stock, stockorderlevel, supplier)
+        public Accessory(string accessoryType, string name, double price, int stockorderlevel, string supplier)
+            : base(name, price, stockorderlevel, supplier)
         {
             this.accessoryType = accessoryType;
         }

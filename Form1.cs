@@ -67,6 +67,11 @@ namespace OOP_Assignment
                     R_restockableItemsListbox.Items.Add($"\"{item.Name}\"  {item.Stock}/{item.StockOrderLevel}");
                 }
             }
+            else if (tabControl1.SelectedIndex == 2)
+            {
+                C_itemCombobox.SelectedIndex = -1;
+                C_createControl.TabPages.Clear();
+            }
         }
 
         // Transactions Page
@@ -120,9 +125,10 @@ namespace OOP_Assignment
 
             Item item = system.get_item(T_itemCombobox.SelectedIndex);
             T_itemInfoTextbox.Text = item.ToString();
-            T_purchaseAmountEntry.Minimum = 1;
+            T_purchaseAmountEntry.Minimum = 0;
             T_purchaseAmountEntry.Maximum = item.Stock;
-            T_purchaseAmountEntry.Value = 1;
+            T_purchaseAmountEntry.Value = 0;
+            if (item.Stock > 0) T_purchaseAmountEntry.Value = 1;
             T_purchaseTotal.Text = (item.Price * Convert.ToDouble(T_purchaseAmountEntry.Value)).ToString("£0.00");
         }
 
@@ -255,19 +261,105 @@ namespace OOP_Assignment
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void C_itemCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            system.add_item("Bag", "MIKE Heritage", 30, 20, 15, "MIKE", new Dictionary<string, string> { { "Capacity", "25" } });
+            C_createControl.TabPages.Clear();
+            switch (C_itemCombobox.SelectedIndex)
+            {
+                case 0:
+                    C_createControl.TabPages.Add(customerPage);
+                    return;
+                case 1:
+                    C_createControl.TabPages.Add(supplierPage);
+                    return;
+                case 2:
+                    C_createControl.TabPages.Add(clothingPage);
+                    return;
+                case 3:
+                    C_createControl.TabPages.Add(shoePage);
+                    return;
+                case 4:
+                    C_createControl.TabPages.Add(bagPage);
+                    return;
+                case 5:
+                    C_createControl.TabPages.Add(nutritionPage);
+                    return;
+                case 6:
+                    C_createControl.TabPages.Add(watchPage);
+                    return;
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void C_customerCreateButton_Click(object sender, EventArgs e)
         {
-            system.add_customer("Brain", "brain@brian.com", 10);
+            string name = C_customerEntry.Text;
+            if (name == "")
+            {
+                Debug.WriteLine("Must enter a name");
+                return;
+            }
+
+            string email = C_emailEntry.Text;
+            if (email == "")
+            {
+                Debug.WriteLine("Must enter an Email");
+            }
+            else if (!email.Contains("@") || !email.Contains("."))
+            {
+                Debug.WriteLine("Email must contain an \"@\" symbol and a domain name (.com)");
+                return;
+            }
+
+            int balance = (int)C_balanceEntry.Value;
+
+            system.add_customer(name, email, balance);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void C_supplierCreateButton_Click(object sender, EventArgs e)
         {
-            system.add_supplier("ADIBAS");
+            string name = C_supplierNameEntry.Text;
+            if (name == "")
+            {
+                Debug.WriteLine("Must enter a name");
+                return;
+            }
+
+            system.add_supplier(name);
         }
+
+        // NEED TO UPDATE SUPPLIER COMBOBOX FOR ALL ITEMS
+        private void C_clothingCreateButton_Click(object sender, EventArgs e)
+        {
+            //string size = C_clothingSizeEntry.Text;
+            string size = "10"; // Will change when reworking clothing system
+            string colour = C_clothingColourEntry.Text;
+            string style = C_clothingTypeEntry.Text;
+            string type = C_itemCombobox.Text;
+            string name = C_clothingNameEntry.Text;
+            double price = (double)C_clothingPriceEntry.Value;
+            int stockOrderLevel = (int)C_clothingRestocklEntry.Value;
+            string supplierName = C_clothingSupplierCombobox.Text;
+
+            system.add_item(type, name, price, stockOrderLevel, supplierName, new Dictionary<string, string> {
+                {"Size", size },
+                { "Colour", colour},
+                {"Style", style }});
+        }
+
+        //From test implementation. Here as reference
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    system.add_item("Bag", "MIKE Heritage", 30, 20, 15, "MIKE", new Dictionary<string, string> { { "Capacity", "25" } });
+        //}
+
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    system.add_customer("Brain", "brain@brian.com", 10);
+        //}
+
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    system.add_supplier("ADIBAS");
+        //}
     }
 }

@@ -4,15 +4,14 @@ namespace OOP_Assignment
     {
         private string name;
         private double price;
-        private int stock;
+        private int stock = 0;
         private int stockOrderLevel;
         private string supplier;
-        public Item(string name, double price, int stock, int stockorderlevel, string supplier)
+        public Item(string name, double price, int stockOrderLevel, string supplier)
         {
             this.name = name;
             this.price = price;
-            this.stock = stock;
-            this.stockOrderLevel = stockorderlevel;
+            this.stockOrderLevel = stockOrderLevel;
             this.supplier = supplier;
         }
 

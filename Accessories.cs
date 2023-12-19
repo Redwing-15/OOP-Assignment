@@ -3,8 +3,8 @@ namespace OOP_Assignment
     class Bag : Accessory
     {
         private string capacity;
-        public Bag(string capacity, string accessoryType, string name, double price, int stock, int stockorderlevel, string supplier)
-            : base(accessoryType, name, price, stock, stockorderlevel, supplier)
+        public Bag(string capacity, string accessoryType, string name, double price, int stockorderlevel, string supplier)
+            : base(accessoryType, name, price, stockorderlevel, supplier)
         {
             this.capacity = capacity;
         }
@@ -32,8 +32,8 @@ namespace OOP_Assignment
         private string quantity;
         private string nutritionType;
         public Nutrition(string quantity, string nutritionType, string accessoryType, string name, double price,
-            int stock, int stockorderlevel, string supplier)
-            : base(accessoryType, name, price, stock, stockorderlevel, supplier)
+            int stockorderlevel, string supplier)
+            : base(accessoryType, name, price, stockorderlevel, supplier)
         {
             this.quantity = quantity;
             this.nutritionType = nutritionType;
@@ -55,7 +55,7 @@ namespace OOP_Assignment
             return $"""
                 Price:    £{Price.ToString("0.00")}
                 Type:      {AccessoryType}
-                Quantity:  {Quantity}
+                Quantity:  {Quantity}g
                 Nutrient:  {NutritionType}
                 Brand:     {Supplier}
                 Stock:  {Stock}
@@ -65,9 +65,9 @@ namespace OOP_Assignment
 
     class Watch : Accessory
     {
-        private string watchType;
-        public Watch(string watchType, string accessoryType, string name, double price, int stock, int stockorderlevel, string supplier)
-            : base(accessoryType, name, price, stock, stockorderlevel, supplier)
+        private string watchType; // Simple, Heart Rate, GPS, GPSandHeartRate
+        public Watch(string watchType, string accessoryType, string name, double price, int stockorderlevel, string supplier)
+            : base(accessoryType, name, price, stockorderlevel, supplier)
         {
             this.watchType = watchType;
         }

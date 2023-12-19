@@ -1,11 +1,11 @@
 // TODO:
-// ADD ABILITY TO CREATE NEW SUPPLIERS
-// ADD ABILITY TO CREATE NEW CUSTOMERS
 // ADD UI TO CREATE NEW ITEMS
-// ADD ENUMS TO ITEMS
+// ADD ENUMS TO ITEMS (Clothing, Shoe, Nutrition, Watch)
+// REWORK CLOTHING TO MAKE SIZE AN ENUM RATHER THAN AN INT
 // REWORK PURCAHSE DATE TO USE DATETIME INSTEAD OF STRING
 // REWORK PURCHASES TO BE TRACKED BY STOCKSYSTEM AND AGGREGATE INTO CUSTOMER
-// REWORK ITEMS TO USE AN INTERFACE3
+// REWORK ITEMS TO USE AN INTERFACE
+// REWORK ITEM SYSTEM SO THAT SUPPLIERS DO NOT KEEP STOCK COUNTS OF EACH ITEM
 
 using System.Diagnostics;
 
@@ -23,13 +23,21 @@ namespace OOP_Assignment
             customers.Add(new Customer("Reece", "rf287@canterbury.ac.uk", 50));
             customers.Add(new Customer("Tina", "tina.eager@canterbury.ac.uk", 1500));
 
-            suppliers.Add(new Supplier("Jim's items"));
             suppliers.Add(new Supplier("MIKE"));
+            suppliers.Add(new Supplier("Super Nutrition"));
+            suppliers.Add(new Supplier("Pear"));
+            
 
-            suppliers[0].add_product(new Clothing(10, "Red", "Top", "Red top", 15, 15, 10, "Jim's items"));
-            suppliers[0].add_product(new Shoe(9, "Racer", "MIKE Racers", 65, 10, 20, "MIKE"));
+            suppliers[0].add_product(new Clothing(10, "Black/White", "Top", "MIKE Tracksuit Top", 80, 15, "MIKE"));
+            suppliers[0].add_product(new Shoe(9, "Racer", "MIKE Racers", 65, 20, "MIKE"));
+            suppliers[0].add_product(new Bag("25", "Bag", "MIKE Heritage", 30, 15, "MIKE"));
+            suppliers[1].add_product(new Nutrition("1000", "Protein", "Nutrition", "Super Nutrition Muscle Fuel", 15, 10, "Super Nutrition"));
+            suppliers[2].add_product(new Watch("GPSandHeartRate", "Watch", "Pear Watch Series X", 500, 20, "Pear"));
 
+            // Supplier owns the products, but stock system owns the inventory instance of each item
             foreach (Supplier supplier in suppliers) items.AddRange(supplier.Products);
+            // Need to restock all items once added
+            foreach (Item item in items) item.Stock += 20;
         }
 
         public List<Supplier> Suppliers
@@ -61,28 +69,28 @@ namespace OOP_Assignment
             return customer;
         }
 
-        public Item add_item(string type, string name, double price, int stock, int stockOrderLevel, string supplierName, Dictionary<string, string> misc)
+        public Item add_item(string type, string name, double price, int stockOrderLevel, string supplierName, Dictionary<string, string> misc)
         {
             Item item;
             if (type == "Clothing")
             {
-                item = new Clothing(Convert.ToInt32(misc["Size"]), misc["Colour"], misc["Style"], name, price, stock, stockOrderLevel, supplierName);
+                item = new Clothing(Convert.ToInt32(misc["Size"]), misc["Colour"], misc["Style"], name, price, stockOrderLevel, supplierName);
             }
             else if (type == "Shoe")
             {
-                item = new Shoe(Convert.ToInt32(misc["Size"]), misc["Type"], name, price, stock, stockOrderLevel, supplierName);
+                item = new Shoe(Convert.ToInt32(misc["Size"]), misc["Type"], name, price, stockOrderLevel, supplierName);
             }
             else if (type == "Bag")
             {
-                item = new Bag(misc["Capacity"], "Bag", name, price, stock, stockOrderLevel, supplierName);
+                item = new Bag(misc["Capacity"], "Bag", name, price, stockOrderLevel, supplierName);
             }
             else if (type == "Nutrition")
             {
-                item = new Nutrition(misc["Quantity"], misc["NutritionType"], "Nutrition", name, price, stock, stockOrderLevel, supplierName);
+                item = new Nutrition(misc["Quantity"], misc["NutritionType"], "Nutrition", name, price, stockOrderLevel, supplierName);
             }
             else if (type == "Watch")
             {
-                item = new Watch(misc["watchType"], "Watch", name, price, stock, stockOrderLevel, supplierName);
+                item = new Watch(misc["watchType"], "Watch", name, price, stockOrderLevel, supplierName);
             }
             else
             {

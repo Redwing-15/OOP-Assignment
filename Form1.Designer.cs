@@ -80,8 +80,8 @@
             clothingPage = new TabPage();
             label25 = new Label();
             C_clothingSupplierCombobox = new ComboBox();
-            C_clothingTypeEntry = new ComboBox();
-            C_clothingSizeEntry = new ComboBox();
+            C_clothingTypeCombobox = new ComboBox();
+            C_clothingSizeCombobox = new ComboBox();
             C_clothingNameEntry = new TextBox();
             C_clothingCreateButton = new Button();
             label24 = new Label();
@@ -108,7 +108,7 @@
             C_shoeRestockEntry = new NumericUpDown();
             C_shoePriceEntry = new NumericUpDown();
             bagPage = new TabPage();
-            C_capacityEntry = new TextBox();
+            C_capacityEntry = new NumericUpDown();
             label36 = new Label();
             label32 = new Label();
             C_bagSupplierCombobox = new ComboBox();
@@ -120,7 +120,7 @@
             C_bagRestockEntry = new NumericUpDown();
             C_bagPriceEntry = new NumericUpDown();
             nutritionPage = new TabPage();
-            C_nutrientEntry = new ComboBox();
+            C_nutrientCombobox = new ComboBox();
             label42 = new Label();
             C_quantityEntry = new TextBox();
             label41 = new Label();
@@ -164,6 +164,7 @@
             ((System.ComponentModel.ISupportInitialize)C_shoeRestockEntry).BeginInit();
             ((System.ComponentModel.ISupportInitialize)C_shoePriceEntry).BeginInit();
             bagPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)C_capacityEntry).BeginInit();
             ((System.ComponentModel.ISupportInitialize)C_bagRestockEntry).BeginInit();
             ((System.ComponentModel.ISupportInitialize)C_bagPriceEntry).BeginInit();
             nutritionPage.SuspendLayout();
@@ -690,8 +691,8 @@
             // 
             clothingPage.Controls.Add(label25);
             clothingPage.Controls.Add(C_clothingSupplierCombobox);
-            clothingPage.Controls.Add(C_clothingTypeEntry);
-            clothingPage.Controls.Add(C_clothingSizeEntry);
+            clothingPage.Controls.Add(C_clothingTypeCombobox);
+            clothingPage.Controls.Add(C_clothingSizeCombobox);
             clothingPage.Controls.Add(C_clothingNameEntry);
             clothingPage.Controls.Add(C_clothingCreateButton);
             clothingPage.Controls.Add(label24);
@@ -728,25 +729,25 @@
             C_clothingSupplierCombobox.Size = new Size(116, 28);
             C_clothingSupplierCombobox.TabIndex = 16;
             // 
-            // C_clothingTypeEntry
+            // C_clothingTypeCombobox
             // 
-            C_clothingTypeEntry.DropDownStyle = ComboBoxStyle.DropDownList;
-            C_clothingTypeEntry.FormattingEnabled = true;
-            C_clothingTypeEntry.Items.AddRange(new object[] { "Vest", "Top", "Jacket", "Shorts", "Capri Trousers", "Leggings" });
-            C_clothingTypeEntry.Location = new Point(434, 186);
-            C_clothingTypeEntry.Name = "C_clothingTypeEntry";
-            C_clothingTypeEntry.Size = new Size(125, 28);
-            C_clothingTypeEntry.TabIndex = 15;
+            C_clothingTypeCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            C_clothingTypeCombobox.FormattingEnabled = true;
+            C_clothingTypeCombobox.Items.AddRange(new object[] { "Vest", "Top", "Jacket", "Shorts", "Capri Trousers", "Leggings" });
+            C_clothingTypeCombobox.Location = new Point(434, 186);
+            C_clothingTypeCombobox.Name = "C_clothingTypeCombobox";
+            C_clothingTypeCombobox.Size = new Size(125, 28);
+            C_clothingTypeCombobox.TabIndex = 15;
             // 
-            // C_clothingSizeEntry
+            // C_clothingSizeCombobox
             // 
-            C_clothingSizeEntry.DropDownStyle = ComboBoxStyle.DropDownList;
-            C_clothingSizeEntry.FormattingEnabled = true;
-            C_clothingSizeEntry.Items.AddRange(new object[] { "XS", "S", "M", "L", "XL", "XXL" });
-            C_clothingSizeEntry.Location = new Point(433, 89);
-            C_clothingSizeEntry.Name = "C_clothingSizeEntry";
-            C_clothingSizeEntry.Size = new Size(125, 28);
-            C_clothingSizeEntry.TabIndex = 14;
+            C_clothingSizeCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            C_clothingSizeCombobox.FormattingEnabled = true;
+            C_clothingSizeCombobox.Items.AddRange(new object[] { "XS", "S", "M", "L", "XL", "XXL" });
+            C_clothingSizeCombobox.Location = new Point(433, 89);
+            C_clothingSizeCombobox.Name = "C_clothingSizeCombobox";
+            C_clothingSizeCombobox.Size = new Size(125, 28);
+            C_clothingSizeCombobox.TabIndex = 14;
             // 
             // C_clothingNameEntry
             // 
@@ -1002,15 +1003,16 @@
             // 
             // C_capacityEntry
             // 
-            C_capacityEntry.Location = new Point(462, 101);
+            C_capacityEntry.Location = new Point(462, 97);
             C_capacityEntry.Name = "C_capacityEntry";
-            C_capacityEntry.Size = new Size(82, 27);
-            C_capacityEntry.TabIndex = 37;
+            C_capacityEntry.Size = new Size(73, 27);
+            C_capacityEntry.TabIndex = 38;
+            C_capacityEntry.TextAlign = HorizontalAlignment.Right;
             // 
             // label36
             // 
             label36.AutoSize = true;
-            label36.Location = new Point(390, 104);
+            label36.Location = new Point(390, 100);
             label36.Name = "label36";
             label36.Size = new Size(66, 20);
             label36.TabIndex = 36;
@@ -1096,7 +1098,7 @@
             // 
             // nutritionPage
             // 
-            nutritionPage.Controls.Add(C_nutrientEntry);
+            nutritionPage.Controls.Add(C_nutrientCombobox);
             nutritionPage.Controls.Add(label42);
             nutritionPage.Controls.Add(C_quantityEntry);
             nutritionPage.Controls.Add(label41);
@@ -1116,15 +1118,15 @@
             nutritionPage.Text = "Nutrition";
             nutritionPage.UseVisualStyleBackColor = true;
             // 
-            // C_nutrientEntry
+            // C_nutrientCombobox
             // 
-            C_nutrientEntry.DropDownStyle = ComboBoxStyle.DropDownList;
-            C_nutrientEntry.FormattingEnabled = true;
-            C_nutrientEntry.Items.AddRange(new object[] { "Carbohydrates", "Proteins", "Fats", "Vitamins", "Minerals", "Fiber" });
-            C_nutrientEntry.Location = new Point(465, 139);
-            C_nutrientEntry.Name = "C_nutrientEntry";
-            C_nutrientEntry.Size = new Size(125, 28);
-            C_nutrientEntry.TabIndex = 48;
+            C_nutrientCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            C_nutrientCombobox.FormattingEnabled = true;
+            C_nutrientCombobox.Items.AddRange(new object[] { "Carbohydrates", "Proteins", "Fats", "Vitamins", "Minerals", "Fiber" });
+            C_nutrientCombobox.Location = new Point(465, 139);
+            C_nutrientCombobox.Name = "C_nutrientCombobox";
+            C_nutrientCombobox.Size = new Size(125, 28);
+            C_nutrientCombobox.TabIndex = 48;
             // 
             // label42
             // 
@@ -1391,6 +1393,7 @@
             ((System.ComponentModel.ISupportInitialize)C_shoePriceEntry).EndInit();
             bagPage.ResumeLayout(false);
             bagPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)C_capacityEntry).EndInit();
             ((System.ComponentModel.ISupportInitialize)C_bagRestockEntry).EndInit();
             ((System.ComponentModel.ISupportInitialize)C_bagPriceEntry).EndInit();
             nutritionPage.ResumeLayout(false);
@@ -1471,8 +1474,8 @@
         private Label label21;
         private Label label20;
         private Label label19;
-        private ComboBox C_clothingTypeEntry;
-        private ComboBox C_clothingSizeEntry;
+        private ComboBox C_clothingTypeCombobox;
+        private ComboBox C_clothingSizeCombobox;
         private TextBox C_clothingNameEntry;
         private Label label25;
         private ComboBox C_clothingSupplierCombobox;
@@ -1498,7 +1501,6 @@
         private Label label35;
         private NumericUpDown C_bagRestockEntry;
         private NumericUpDown C_bagPriceEntry;
-        private TextBox C_capacityEntry;
         private Label label36;
         private TextBox C_quantityEntry;
         private Label label41;
@@ -1511,7 +1513,7 @@
         private Label label40;
         private NumericUpDown C_nutrientRestockEntry;
         private NumericUpDown C_nutrientPriceEntry;
-        private ComboBox C_nutrientEntry;
+        private ComboBox C_nutrientCombobox;
         private Label label42;
         private ComboBox C_watchTypeCombobox;
         private Label label43;
@@ -1524,5 +1526,6 @@
         private Label label47;
         private NumericUpDown C_watchRestockEntry;
         private NumericUpDown C_watchPriceEntry;
+        private NumericUpDown C_capacityEntry;
     }
 }

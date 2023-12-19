@@ -190,7 +190,6 @@ namespace OOP_Assignment
         {
             // Gets the Item name from the string in the form: "NAME" 0/1
             string item = ((string)R_restockableItemsListbox.SelectedItem).Split('"')[1];
-            Debug.WriteLine($"{item}");
             R_itemCombobox.SelectedIndex = R_itemCombobox.Items.IndexOf(item);
         }
 
@@ -296,18 +295,18 @@ namespace OOP_Assignment
             string name = C_customerEntry.Text;
             if (name == "")
             {
-                Debug.WriteLine("Must enter a name");
+                MessageBox.Show("Must enter a name");
                 return;
             }
 
             string email = C_emailEntry.Text;
             if (email == "")
             {
-                Debug.WriteLine("Must enter an Email");
+                MessageBox.Show("Must enter an Email");
             }
             else if (!email.Contains("@") || !email.Contains("."))
             {
-                Debug.WriteLine("Email must contain an \"@\" symbol and a domain name (.com)");
+                MessageBox.Show("Email must contain an \"@\" symbol and a domain name (.com)");
                 return;
             }
 
@@ -321,7 +320,7 @@ namespace OOP_Assignment
             string name = C_supplierNameEntry.Text;
             if (name == "")
             {
-                Debug.WriteLine("Must enter a name");
+                MessageBox.Show("Must enter a name");
                 return;
             }
 
@@ -331,65 +330,152 @@ namespace OOP_Assignment
         // NEED TO UPDATE SUPPLIER COMBOBOX FOR ALL ITEMS
         private void C_clothingCreateButton_Click(object sender, EventArgs e)
         {
-            string size = C_clothingSizeEntry.Text;
+            string size = C_clothingSizeCombobox.Text;
+            if (C_clothingSizeCombobox.SelectedIndex == -1)
+            {
+                MessageBox.Show("No size selected");
+                return;
+            }
             string colour = C_clothingColourEntry.Text;
-            string style = C_clothingTypeEntry.Text;
+            if (colour == "")
+            {
+                MessageBox.Show("No colour entered");
+                return;
+            }
+            string style = C_clothingTypeCombobox.Text;
+            if (C_clothingTypeCombobox.SelectedIndex == -1)
+            {
+                MessageBox.Show("No clothing type selected");
+                return;
+            }
 
-            handle_item_errors(C_itemCombobox.Text, C_clothingNameEntry.Text, (double)C_clothingPriceEntry.Value, (int)C_clothingRestockEntry.Value,
-                C_clothingSupplierCombobox.Text, new Dictionary<string, string> {
+            string result = handle_item_errors(C_itemCombobox.Text, C_clothingNameEntry.Text, (double)C_clothingPriceEntry.Value,
+                (int)C_clothingRestockEntry.Value, C_clothingSupplierCombobox.Text, new Dictionary<string, string> {
                 {"Size", size },
                 { "Colour", colour},
                 {"Style", style }});
+            if (result != "Success")
+            {
+                MessageBox.Show(result);
+                return;
+            }
         }
 
         private void C_shoeCreateButton_Click(object sender, EventArgs e)
         {
             string size = C_shoeSizeCombobox.Text;
+            if (C_shoeSizeCombobox.SelectedIndex == -1)
+            {
+                MessageBox.Show("No shoe size selected");
+                return;
+            }
             string shoeType = C_shoeTypeCombobox.Text;
+            if (C_shoeTypeCombobox.SelectedIndex == -1)
+            {
+                MessageBox.Show("No shoe type selected");
+                return;
+            }
 
-            handle_item_errors(C_itemCombobox.Text, C_shoeNameEntry.Text, (double)C_shoePriceEntry.Value, (int)C_shoeRestockEntry.Value,
+            string result = handle_item_errors(C_itemCombobox.Text, C_shoeNameEntry.Text, (double)C_shoePriceEntry.Value, (int)C_shoeRestockEntry.Value,
                 C_shoeSupplierCombobox.Text, new Dictionary<string, string> {
                 {"Size", size },
                 { "Type", shoeType}});
+            if (result != "Success")
+            {
+                MessageBox.Show(result);
+                return;
+            }
         }
 
         private void C_bagCreateButton_Click(object sender, EventArgs e)
         {
-            string capacity = C_capacityEntry.Text;
+            string capacity = C_capacityEntry.Value.ToString();
+            if (capacity == "0")
+            {
+                MessageBox.Show("No capacity entered");
+                return;
+            }
 
-            handle_item_errors(C_itemCombobox.Text, C_bagNameEntry.Text, (double)C_bagPriceEntry.Value, (int)C_bagRestockEntry.Value,
+            string result = handle_item_errors(C_itemCombobox.Text, C_bagNameEntry.Text, (double)C_bagPriceEntry.Value, (int)C_bagRestockEntry.Value,
                 C_bagSupplierCombobox.Text, new Dictionary<string, string> {
                 {"Capacity", capacity }});
+            if (result != "Success")
+            {
+                MessageBox.Show(result);
+                return;
+            }
         }
 
         private void C_nutrientCreateButton_Click(object sender, EventArgs e)
         {
             string quantity = C_quantityEntry.Text;
-            string nutrient = C_nutrientEntry.Text;
+            if (quantity == "")
+            {
+                MessageBox.Show("No quantity entered");
+                return;
+            }
+            string nutrient = C_nutrientCombobox.Text;
+            if (C_nutrientCombobox.SelectedIndex == -1)
+            {
+                MessageBox.Show("No nutrient type selected");
+                return;
+            }
 
-            handle_item_errors(C_itemCombobox.Text, C_nutrientNameEntry.Text, (double)C_nutrientPriceEntry.Value, (int)C_nutrientRestockEntry.Value,
-                C_nutrientSupplierCombobox.Text, new Dictionary<string, string> {
+            string result = handle_item_errors(C_itemCombobox.Text, C_nutrientNameEntry.Text, (double)C_nutrientPriceEntry.Value,
+                (int)C_nutrientRestockEntry.Value, C_nutrientSupplierCombobox.Text, new Dictionary<string, string> {
                 {"Quantity", quantity },
                 {"Type", nutrient }});
+            if (result != "Success")
+            {
+                MessageBox.Show(result);
+                return;
+            }
         }
 
         private void C_watchCreateButton_Click(object sender, EventArgs e)
         {
             string watchType = C_watchTypeCombobox.Text;
+            if (C_watchTypeCombobox.SelectedIndex == -1)
+            {
+                MessageBox.Show("No watch type selected");
+                return;
+            }
 
-            handle_item_errors(C_itemCombobox.Text, C_watchNameEntry.Text, (double)C_watchPriceEntry.Value, (int)C_watchRestockEntry.Value,
+            string result = handle_item_errors(C_itemCombobox.Text, C_watchNameEntry.Text, (double)C_watchPriceEntry.Value, (int)C_watchRestockEntry.Value,
                 C_watchSupplierCombobox.Text, new Dictionary<string, string> {
                 {"Type", watchType }});
+            if (result != "Success")
+            {
+                MessageBox.Show(result);
+                return;
+            }
         }
 
-        private void handle_item_errors(string type, string name, double price, int stockOrderLevel, string supplierName, Dictionary<string, string> misc)
+        private string handle_item_errors(string type, string name, double price, int stockOrderLevel, string supplierName, Dictionary<string, string> misc)
         {
             // Error handling references
+            if (name == "")
+            {
+                return "No name entered";
+            }
+            else if (price < 1)
+            {
+                return "Price must be greater than 0";
+            }
+            else if (stockOrderLevel < 1)
+            {
+                return "Restock amount must be greater than 0";
+            }
+            else if (supplierName == "")
+            {
+                return "No supplier selected";
+            }
             //string name = C_clothingNameEntry.Text;
             //double price = (double)C_clothingPriceEntry.Value;
             //int stockOrderLevel = (int)C_clothingRestocklEntry.Value;
             //string supplierName = C_clothingSupplierCombobox.Text;
             system.add_item(type, name, price, stockOrderLevel, supplierName, misc);
+            return "Success";
         }
     }
 }

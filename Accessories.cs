@@ -2,14 +2,14 @@ namespace OOP_Assignment
 {
     class Bag : Accessory
     {
-        private string capacity;
-        public Bag(string capacity, string accessoryType, string name, double price, int stockorderlevel, string supplier)
+        private int capacity;
+        public Bag(int capacity, string accessoryType, string name, double price, int stockorderlevel, string supplier)
             : base(accessoryType, name, price, stockorderlevel, supplier)
         {
             this.capacity = capacity;
         }
 
-        public string Capacity
+        public int Capacity
         {
             get { return capacity; }
             set { capacity = value; }

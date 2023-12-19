@@ -1,6 +1,8 @@
 // TODO:
-// ADD ERROR CHECKING TO CREATE UI
-//
+// POPULATE SUPPLIER COMBOBOX IN ALL CREATE PAGES
+// WIPE ALL CREATE ENTRY FIELDS WHEN CREATE SUCCESS OR INDEX CHANGE
+// ADD QUICK RESTOCK ALL BUTTON
+// 
 // BIG TODO:
 // REWORK ITEMS TO USE AN INTERFACE
 // UNIT TEST??
@@ -27,7 +29,7 @@ namespace OOP_Assignment
 
             suppliers[0].add_product(new Clothing(ClothingSize.M, "Black/White", ClothingStyle.Top, "Tracksuit Top", 80, 15, "MIKE"));
             suppliers[0].add_product(new Shoe(9, ShoeType.Racer, "Racers", 65, 20, "MIKE"));
-            suppliers[0].add_product(new Bag("25", "Bag", "Heritage", 30, 15, "MIKE"));
+            suppliers[0].add_product(new Bag(25, "Bag", "Heritage", 30, 15, "MIKE"));
             suppliers[1].add_product(new Nutrition("1000", NutrientType.Proteins, "Nutrition", "Muscle Fuel", 15, 10, "Super Nutrition"));
             suppliers[2].add_product(new Watch(WatchType.GPSandHeartRate, "Watch", "Pear Watch Series X", 500, 20, "Pear"));
 
@@ -81,7 +83,7 @@ namespace OOP_Assignment
             }
             else if (type == "Bag")
             {
-                item = new Bag(misc["Capacity"], "Bag", name, price, stockOrderLevel, supplierName);
+                item = new Bag(Convert.ToInt32(misc["Capacity"]), "Bag", name, price, stockOrderLevel, supplierName);
             }
             else if (type == "Nutrition")
             {

@@ -123,6 +123,7 @@ namespace OOP_Assignment
             T_purchaseAmountEntry.Minimum = 1;
             T_purchaseAmountEntry.Maximum = item.Stock;
             T_purchaseAmountEntry.Value = 1;
+            T_purchaseTotal.Text = (item.Price * Convert.ToDouble(T_purchaseAmountEntry.Value)).ToString("£0.00");
         }
 
         private void T_purchaseAmountEntry_ValueChanged(object sender, EventArgs e)
@@ -252,6 +253,11 @@ namespace OOP_Assignment
                 }
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            system.add_item("Bag", "MIKE Heritage", 30, 20, 15, "MIKE", new Dictionary<string, string> {{ "Capacity", "25" }});
         }
     }
 }

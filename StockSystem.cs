@@ -1,11 +1,13 @@
 // TODO:
 // ADD ABILITY TO CREATE NEW SUPPLIERS
 // ADD ABILITY TO CREATE NEW CUSTOMERS
-// ADD ABILITY TO CREATE NEW ITEMS
+// ADD UI TO CREATE NEW ITEMS
 // ADD ENUMS TO ITEMS
 // REWORK PURCAHSE DATE TO USE DATETIME INSTEAD OF STRING
 // REWORK PURCHASES TO BE TRACKED BY STOCKSYSTEM AND AGGREGATE INTO CUSTOMER
-// REWORK ITEMS TO USE AN INTERFACE
+// REWORK ITEMS TO USE AN INTERFACE3
+
+using System.Diagnostics;
 
 namespace OOP_Assignment
 {
@@ -40,6 +42,63 @@ namespace OOP_Assignment
         public List<Item> Items
         {
             get { return items; }
+        }
+
+        public Supplier add_supplier(string name)
+        {
+            Supplier supplier = new Supplier(name);
+            suppliers.Add(supplier);
+
+            return supplier;
+        }
+        
+        public Customer add_customer(string name, string email, int balance)
+        {
+            Customer customer = new Customer(name, email, balance);
+            customers.Add(customer);
+
+            return customer;
+        }
+
+        public Item add_item(string type, string name, double price, int stock, int stockOrderLevel, string supplierName, Dictionary<string, string> misc)
+        {
+            Item item;
+            if (type == "Clothing")
+            {
+                item = new Clothing(Convert.ToInt32(misc["Size"]), misc["Colour"], misc["Style"], name, price, stock, stockOrderLevel, supplierName);
+            }
+            else if (type == "Shoe")
+            {
+                item = new Shoe(Convert.ToInt32(misc["Size"]), misc["Type"], name, price, stock, stockOrderLevel, supplierName);
+            }
+            else if (type == "Bag")
+            {
+                item = new Bag(misc["Capacity"], "Bag", name, price, stock, stockOrderLevel, supplierName);
+            }
+            else if (type == "Nutrition")
+            {
+                item = new Nutrition(misc["Quantity"], misc["NutritionType"], "Nutrition", name, price, stock, stockOrderLevel, supplierName);
+            }
+            else if (type == "Watch")
+            {
+                item = new Watch(misc["watchType"], "Watch", name, price, stock, stockOrderLevel, supplierName);
+            }
+            else
+            {
+                return null;
+            }
+
+            foreach (Supplier supplier in suppliers)
+            {
+                if (supplier.Name == supplierName)
+                {
+                    supplier.add_product(item);
+                    break;
+                }
+            }
+            items.Add(item);
+
+            return item;
         }
 
         public Customer get_customer(int customerIndex)

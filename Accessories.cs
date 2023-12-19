@@ -20,9 +20,9 @@ namespace OOP_Assignment
             return $"""
                 Price:     £{Price.ToString("0.00")}
                 Type:      {AccessoryType}
-                Capacity:  {Capacity}
+                Capacity:  {Capacity}L
                 Brand:     {Supplier}
-                Stock:  {Stock}
+                Stock:     {Stock}
                 """;
         }
     }

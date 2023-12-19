@@ -62,12 +62,15 @@
             R_restockButton = new Button();
             label2 = new Label();
             R_restockAmountEntry = new NumericUpDown();
+            createPage = new TabPage();
+            button1 = new Button();
             tabControl1.SuspendLayout();
             transactionsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)T_addFundsEntry).BeginInit();
             ((System.ComponentModel.ISupportInitialize)T_purchaseAmountEntry).BeginInit();
             restockPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)R_restockAmountEntry).BeginInit();
+            createPage.SuspendLayout();
             SuspendLayout();
             // 
             // T_itemCombobox
@@ -93,6 +96,7 @@
             // 
             tabControl1.Controls.Add(transactionsPage);
             tabControl1.Controls.Add(restockPage);
+            tabControl1.Controls.Add(createPage);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
@@ -430,6 +434,26 @@
             R_restockAmountEntry.TabIndex = 10;
             R_restockAmountEntry.TextAlign = HorizontalAlignment.Right;
             // 
+            // createPage
+            // 
+            createPage.Controls.Add(button1);
+            createPage.Location = new Point(4, 29);
+            createPage.Name = "createPage";
+            createPage.Size = new Size(792, 417);
+            createPage.TabIndex = 2;
+            createPage.Text = "Create New";
+            createPage.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(335, 103);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 0;
+            button1.Text = "Create Item";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -446,6 +470,7 @@
             restockPage.ResumeLayout(false);
             restockPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)R_restockAmountEntry).EndInit();
+            createPage.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -485,5 +510,7 @@
         private TextBox T_balanceTextbox;
         private Label label13;
         private Label label12;
+        private TabPage createPage;
+        private Button button1;
     }
 }

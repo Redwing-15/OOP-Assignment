@@ -1,7 +1,5 @@
 // TODO:
 // ADD ERROR CHECKING TO CREATE UI
-// REWORK PURCAHSE DATE TO USE DATETIME INSTEAD OF STRING
-// REWORK PURCHASES TO BE TRACKED BY STOCKSYSTEM AND AGGREGATE INTO CUSTOMER
 //
 // BIG TODO:
 // REWORK ITEMS TO USE AN INTERFACE
@@ -13,6 +11,7 @@ namespace OOP_Assignment
     {
         List<Supplier> suppliers = new List<Supplier>();
         List<Customer> customers = new List<Customer>();
+        List<Purchase> purchases = new List<Purchase>();
         List<Item> items = new List<Item>();
 
         // Populates system with customers, suppliers and items
@@ -149,8 +148,9 @@ namespace OOP_Assignment
             {
                 return "Not enough stock";
             }
-
-            customer.add_purchase(new Purchase(item.Name, DateTime.Now.ToString(), item.Price, itemQuantity));
+            Purchase purchase = new Purchase(item.Name, DateTime.Now, item.Price, itemQuantity);
+            purchases.Add(purchase);
+            customer.add_purchase(purchase);
             item.Stock -= itemQuantity;
             return "Success";
         }

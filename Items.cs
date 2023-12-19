@@ -2,13 +2,12 @@ namespace OOP_Assignment
 {
     class Clothing : Item
     {
-        private ClothingSize size; // XS, S, M, L, XL, XXL
+        private ClothingSize size;
         private string colour;
-        private ClothingStyle style; // Shorts, Capris, Leggings, Vests, Tops, Jackets
+        private ClothingStyle style;
 
-        // This looks messy, interfaces will possibly fix this??
-        public Clothing(ClothingSize size, string colour, ClothingStyle style, string name, double price, int stockorderlevel, string supplier)
-            : base(name, price, stockorderlevel, supplier)
+        public Clothing(ClothingSize size, string colour, ClothingStyle style, string name, double price)
+            : base(name, price)
         {
             this.size = size;
             this.colour = colour;
@@ -47,11 +46,10 @@ namespace OOP_Assignment
     class Shoe : Item
     {
         private int size;
-        private ShoeType type; // Racer, Stability, Neutral, Trail, Track
+        private ShoeType type;
 
-        // This looks messy, interfaces will possibly fix this??
-        public Shoe(int size, ShoeType type, string name, double price, int stockorderlevel, string supplier)
-            : base(name, price, stockorderlevel, supplier)
+        public Shoe(int size, ShoeType type, string name, double price)
+            : base(name, price)
         {
             this.size = size;
             this.type = type;
@@ -83,8 +81,8 @@ namespace OOP_Assignment
     abstract class Accessory : Item
     {
         private string accessoryType;
-        public Accessory(string accessoryType, string name, double price, int stockorderlevel, string supplier)
-            : base(name, price, stockorderlevel, supplier)
+        public Accessory(string accessoryType, string name, double price)
+            : base(name, price)
         {
             this.accessoryType = accessoryType;
         }

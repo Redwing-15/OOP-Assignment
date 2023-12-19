@@ -3,8 +3,8 @@ namespace OOP_Assignment
     class Bag : Accessory
     {
         private int capacity;
-        public Bag(int capacity, string accessoryType, string name, double price, int stockorderlevel, string supplier)
-            : base(accessoryType, name, price, stockorderlevel, supplier)
+        public Bag(int capacity, string accessoryType, string name, double price)
+            : base(accessoryType, name, price)
         {
             this.capacity = capacity;
         }
@@ -31,9 +31,8 @@ namespace OOP_Assignment
     {
         private string quantity;
         private NutrientType nutritionType;
-        public Nutrition(string quantity, NutrientType nutritionType, string accessoryType, string name, double price,
-            int stockorderlevel, string supplier)
-            : base(accessoryType, name, price, stockorderlevel, supplier)
+        public Nutrition(string quantity, NutrientType nutritionType, string accessoryType, string name, double price)
+            : base(accessoryType, name, price)
         {
             this.quantity = quantity;
             this.nutritionType = nutritionType;
@@ -65,9 +64,9 @@ namespace OOP_Assignment
 
     class Watch : Accessory
     {
-        private WatchType watchType; // Simple, Heart Rate, GPS, GPSandHeartRate
-        public Watch(WatchType watchType, string accessoryType, string name, double price, int stockorderlevel, string supplier)
-            : base(accessoryType, name, price, stockorderlevel, supplier)
+        private WatchType watchType;
+        public Watch(WatchType watchType, string accessoryType, string name, double price)
+            : base(accessoryType, name, price)
         {
             this.watchType = watchType;
         }

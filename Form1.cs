@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace OOP_Assignment
 {
     public partial class Form1 : Form

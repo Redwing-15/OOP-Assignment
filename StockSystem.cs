@@ -1,10 +1,10 @@
-// TODO:
+// BIG TODO:
+// UNIT TEST??
+//
+// OPTIONAL FUNCTIONALITY:
+// ADD ENUMS FOR ITEM TYPES (Clothing, Shoe, Bag, Nutrition, Watch)
 // ENHANCE CREATE ERROR HANDLING BY HANDLING CORRECT DATATYPES
 // ADD QUICK RESTOCK ALL BUTTON
-// 
-// BIG TODO:
-// REWORK ITEMS TO USE AN INTERFACE
-// UNIT TEST??
 
 namespace OOP_Assignment
 {
@@ -24,18 +24,22 @@ namespace OOP_Assignment
             suppliers.Add(new Supplier("MIKE"));
             suppliers.Add(new Supplier("Super Nutrition"));
             suppliers.Add(new Supplier("Pear"));
-            
 
-            suppliers[0].add_product(new Clothing(ClothingSize.M, "Black/White", ClothingStyle.Top, "Tracksuit Top", 80, 15, "MIKE"));
-            suppliers[0].add_product(new Shoe(9, ShoeType.Racer, "Racers", 65, 20, "MIKE"));
-            suppliers[0].add_product(new Bag(25, "Bag", "Heritage", 30, 15, "MIKE"));
-            suppliers[1].add_product(new Nutrition("1000", NutrientType.Proteins, "Nutrition", "Muscle Fuel", 15, 10, "Super Nutrition"));
-            suppliers[2].add_product(new Watch(WatchType.GPSandHeartRate, "Watch", "Pear Watch Series X", 500, 20, "Pear"));
 
-            // Supplier owns the products, but stock system owns the inventory instance of each item
-            foreach (Supplier supplier in suppliers) items.AddRange(supplier.Products);
-            // Need to restock all items once added
-            foreach (Item item in items) item.Stock += 20;
+            add_item("Clothing", "Tracksuit Top", 80, 15, "MIKE", new Dictionary<string, string> {
+                {"Size",  "M"},
+                {"Colour", "Black/White"},
+                {"Style", "Top"}});
+            add_item("Shoe", "Racer", 65, 20, "MIKE", new Dictionary<string, string> {
+                {"Size",  "9"},
+                {"Type", "Racer"}});
+            add_item("Bag", "Heritage", 30, 15, "MIKE", new Dictionary<string, string> {
+                {"Capacity",  "25"}});
+            add_item("Nutrition", "Muscle Fuel", 15, 10, "Super Nutrition", new Dictionary<string, string> {
+                {"Quantity",  "1000"},
+                {"Type", "Proteins"}});
+            add_item("Watch", "Pear Watch Series X", 500, 20, "Pear", new Dictionary<string, string> {
+                {"Type",  "GPSandHeartRate"}});
         }
 
         public List<Supplier> Suppliers
@@ -73,25 +77,25 @@ namespace OOP_Assignment
             if (type == "Clothing")
             {
                 item = new Clothing((ClothingSize)Enum.Parse(typeof(ClothingSize), misc["Size"]), misc["Colour"],
-                    (ClothingStyle)Enum.Parse(typeof(ClothingStyle), misc["Style"]), name, price, stockOrderLevel, supplierName);
+                    (ClothingStyle)Enum.Parse(typeof(ClothingStyle), misc["Style"]), name, price);
             }
             else if (type == "Shoe")
             {
                 item = new Shoe(Convert.ToInt32(misc["Size"]), (ShoeType)Enum.Parse(typeof(ShoeType), misc["Type"]),
-                    name, price, stockOrderLevel, supplierName);
+                    name, price);
             }
             else if (type == "Bag")
             {
-                item = new Bag(Convert.ToInt32(misc["Capacity"]), "Bag", name, price, stockOrderLevel, supplierName);
+                item = new Bag(Convert.ToInt32(misc["Capacity"]), "Bag", name, price);
             }
             else if (type == "Nutrition")
             {
                 item = new Nutrition(misc["Quantity"], (NutrientType)Enum.Parse(typeof(NutrientType), misc["Type"]), "Nutrition",
-                    name, price, stockOrderLevel, supplierName);
+                    name, price);
             }
             else if (type == "Watch")
             {
-                item = new Watch((WatchType)Enum.Parse(typeof(WatchType), misc["Type"]), "Watch", name, price, stockOrderLevel, supplierName);
+                item = new Watch((WatchType)Enum.Parse(typeof(WatchType), misc["Type"]), "Watch", name, price);
             }
             else
             {
@@ -106,6 +110,7 @@ namespace OOP_Assignment
                     break;
                 }
             }
+            item.become_inventory(stockOrderLevel, supplierName);
             items.Add(item);
 
             return item;

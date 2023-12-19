@@ -1,5 +1,5 @@
 namespace OOP_Assignment
-{//(Clothing, Shoe, Nutrition, Watch)
+{
     enum ClothingSize
     {
         XS, S, M, L, XL, XXL

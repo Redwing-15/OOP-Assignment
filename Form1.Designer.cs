@@ -572,6 +572,7 @@
             C_createControl.SelectedIndex = 0;
             C_createControl.Size = new Size(792, 360);
             C_createControl.TabIndex = 1;
+            C_createControl.SelectedIndexChanged += C_createControl_SelectedIndexChanged;
             // 
             // customerPage
             // 

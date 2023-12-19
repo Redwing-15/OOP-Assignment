@@ -10,6 +10,7 @@ namespace OOP_Assignment
         {
             InitializeComponent();
 
+            // Cant find a method to initiate a tabIndex change so values for comboboxes need to be manually added.
             T_customerCombobox.Items.Clear();
             foreach (Customer customer in system.Customers)
             {
@@ -261,33 +262,116 @@ namespace OOP_Assignment
             }
         }
 
+        private void C_createControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (C_createControl.TabPages.Count == 0) return;
+            switch (C_createControl.TabPages[0].Name)
+            {
+                case "customerPage":
+                    C_customerEntry.Text = "";
+                    C_emailEntry.Text = "";
+                    C_balanceEntry.Text = "";
+                    return;
+                case "supplierPage":
+                    C_supplierNameEntry.Text = "";
+                    return;
+                case "clothingPage":
+                    C_clothingSupplierCombobox.SelectedIndex = -1;
+                    C_clothingSupplierCombobox.Items.Clear();
+                    foreach (Supplier supplier in system.Suppliers)
+                    {
+                        C_clothingSupplierCombobox.Items.Add(supplier.Name);
+                    }
+                    C_clothingNameEntry.Text = "";
+                    C_clothingPriceEntry.Value = 0;
+                    C_clothingRestockEntry.Value = 0;
+                    C_clothingSizeCombobox.SelectedIndex = -1;
+                    C_clothingColourEntry.Text = "";
+                    C_clothingTypeCombobox.SelectedIndex = -1;
+                    return;
+                case "shoePage":
+                    C_shoeSupplierCombobox.SelectedIndex = -1;
+                    C_shoeSupplierCombobox.Items.Clear();
+                    foreach (Supplier supplier in system.Suppliers)
+                    {
+                        C_shoeSupplierCombobox.Items.Add(supplier.Name);
+                    }
+                    C_shoeNameEntry.Text = "";
+                    C_shoePriceEntry.Value = 0;
+                    C_shoeRestockEntry.Value = 0;
+                    C_shoeSizeCombobox.SelectedIndex = -1;
+                    C_shoeTypeCombobox.SelectedIndex = -1;
+                    return;
+                case "bagPage":
+                    C_bagSupplierCombobox.SelectedIndex = -1;
+                    C_bagSupplierCombobox.Items.Clear();
+                    foreach (Supplier supplier in system.Suppliers)
+                    {
+                        C_bagSupplierCombobox.Items.Add(supplier.Name);
+                    }
+                    C_bagNameEntry.Text = "";
+                    C_bagPriceEntry.Value = 0;
+                    C_bagRestockEntry.Value = 0;
+                    C_capacityEntry.Value = 0;
+                    return;
+                case "nutritionPage":
+                    C_nutrientSupplierCombobox.SelectedIndex = -1;
+                    C_nutrientSupplierCombobox.Items.Clear();
+                    foreach (Supplier supplier in system.Suppliers)
+                    {
+                        C_nutrientSupplierCombobox.Items.Add(supplier.Name);
+                    }
+                    C_nutrientNameEntry.Text = "";
+                    C_nutrientPriceEntry.Value = 0;
+                    C_nutrientRestockEntry.Value = 0;
+                    C_quantityEntry.Text = "";
+                    C_nutrientCombobox.SelectedIndex = -1;
+                    return;
+                case "watchPage":
+                    C_watchSupplierCombobox.SelectedIndex = -1;
+                    C_watchSupplierCombobox.Items.Clear();
+                    foreach (Supplier supplier in system.Suppliers)
+                    {
+                        C_watchSupplierCombobox.Items.Add(supplier.Name);
+                    }
+                    C_watchNameEntry.Text = "";
+                    C_watchPriceEntry.Value = 0;
+                    C_watchRestockEntry.Value = 0;
+                    C_watchTypeCombobox.SelectedIndex = -1;
+                    return;
+            }
+        }
+
         private void C_itemCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             C_createControl.TabPages.Clear();
             switch (C_itemCombobox.SelectedIndex)
             {
                 case 0:
                     C_createControl.TabPages.Add(customerPage);
-                    return;
+                    break;
                 case 1:
                     C_createControl.TabPages.Add(supplierPage);
-                    return;
+                    break;
                 case 2:
                     C_createControl.TabPages.Add(clothingPage);
-                    return;
+                    break;
                 case 3:
                     C_createControl.TabPages.Add(shoePage);
-                    return;
+                    break;
                 case 4:
                     C_createControl.TabPages.Add(bagPage);
-                    return;
+                    break;
                 case 5:
                     C_createControl.TabPages.Add(nutritionPage);
-                    return;
+                    break;
                 case 6:
                     C_createControl.TabPages.Add(watchPage);
-                    return;
+                    break;
             }
+            C_createControl.SelectedIndex = 1;
+
         }
 
         private void C_customerCreateButton_Click(object sender, EventArgs e)
@@ -313,6 +397,8 @@ namespace OOP_Assignment
             int balance = (int)C_balanceEntry.Value;
 
             system.add_customer(name, email, balance);
+            MessageBox.Show("Successfully added customer!");
+            C_createControl.SelectedIndex = 1;
         }
 
         private void C_supplierCreateButton_Click(object sender, EventArgs e)
@@ -325,6 +411,8 @@ namespace OOP_Assignment
             }
 
             system.add_supplier(name);
+            MessageBox.Show("Successfully added supplier!");
+            C_createControl.SelectedIndex = 1;
         }
 
         // NEED TO UPDATE SUPPLIER COMBOBOX FOR ALL ITEMS
@@ -359,6 +447,8 @@ namespace OOP_Assignment
                 MessageBox.Show(result);
                 return;
             }
+            MessageBox.Show("Successfully added clothing item!");
+            C_createControl.SelectedIndex = 1;
         }
 
         private void C_shoeCreateButton_Click(object sender, EventArgs e)
@@ -385,6 +475,8 @@ namespace OOP_Assignment
                 MessageBox.Show(result);
                 return;
             }
+            MessageBox.Show("Successfully added shoe!");
+            C_createControl.SelectedIndex = 1;
         }
 
         private void C_bagCreateButton_Click(object sender, EventArgs e)
@@ -404,6 +496,8 @@ namespace OOP_Assignment
                 MessageBox.Show(result);
                 return;
             }
+            MessageBox.Show("Successfully added bag!");
+            C_createControl.SelectedIndex = 1;
         }
 
         private void C_nutrientCreateButton_Click(object sender, EventArgs e)
@@ -430,6 +524,8 @@ namespace OOP_Assignment
                 MessageBox.Show(result);
                 return;
             }
+            MessageBox.Show("Successfully added nutrient!");
+            C_createControl.SelectedIndex = 1;
         }
 
         private void C_watchCreateButton_Click(object sender, EventArgs e)
@@ -449,6 +545,8 @@ namespace OOP_Assignment
                 MessageBox.Show(result);
                 return;
             }
+            MessageBox.Show("Successfully added watch!");
+            C_createControl.SelectedIndex = 1;
         }
 
         private string handle_item_errors(string type, string name, double price, int stockOrderLevel, string supplierName, Dictionary<string, string> misc)

@@ -1,13 +1,10 @@
 // TODO:
-// ADD UI TO CREATE NEW ITEMS
+// ADD ERROR CHECKING TO CREATE UI
 // ADD ENUMS TO ITEMS (Clothing, Shoe, Nutrition, Watch)
 // REWORK CLOTHING TO MAKE SIZE AN ENUM RATHER THAN AN INT
 // REWORK PURCAHSE DATE TO USE DATETIME INSTEAD OF STRING
 // REWORK PURCHASES TO BE TRACKED BY STOCKSYSTEM AND AGGREGATE INTO CUSTOMER
 // REWORK ITEMS TO USE AN INTERFACE
-// REWORK ITEM SYSTEM SO THAT SUPPLIERS DO NOT KEEP STOCK COUNTS OF EACH ITEM
-
-using System.Diagnostics;
 
 namespace OOP_Assignment
 {
@@ -28,10 +25,10 @@ namespace OOP_Assignment
             suppliers.Add(new Supplier("Pear"));
             
 
-            suppliers[0].add_product(new Clothing(10, "Black/White", "Top", "MIKE Tracksuit Top", 80, 15, "MIKE"));
-            suppliers[0].add_product(new Shoe(9, "Racer", "MIKE Racers", 65, 20, "MIKE"));
-            suppliers[0].add_product(new Bag("25", "Bag", "MIKE Heritage", 30, 15, "MIKE"));
-            suppliers[1].add_product(new Nutrition("1000", "Protein", "Nutrition", "Super Nutrition Muscle Fuel", 15, 10, "Super Nutrition"));
+            suppliers[0].add_product(new Clothing(10, "Black/White", "Top", "Tracksuit Top", 80, 15, "MIKE"));
+            suppliers[0].add_product(new Shoe(9, "Racer", "Racers", 65, 20, "MIKE"));
+            suppliers[0].add_product(new Bag("25", "Bag", "Heritage", 30, 15, "MIKE"));
+            suppliers[1].add_product(new Nutrition("1000", "Protein", "Nutrition", "Muscle Fuel", 15, 10, "Super Nutrition"));
             suppliers[2].add_product(new Watch("GPSandHeartRate", "Watch", "Pear Watch Series X", 500, 20, "Pear"));
 
             // Supplier owns the products, but stock system owns the inventory instance of each item
@@ -86,11 +83,11 @@ namespace OOP_Assignment
             }
             else if (type == "Nutrition")
             {
-                item = new Nutrition(misc["Quantity"], misc["NutritionType"], "Nutrition", name, price, stockOrderLevel, supplierName);
+                item = new Nutrition(misc["Quantity"], misc["Type"], "Nutrition", name, price, stockOrderLevel, supplierName);
             }
             else if (type == "Watch")
             {
-                item = new Watch(misc["watchType"], "Watch", name, price, stockOrderLevel, supplierName);
+                item = new Watch(misc["Type"], "Watch", name, price, stockOrderLevel, supplierName);
             }
             else
             {

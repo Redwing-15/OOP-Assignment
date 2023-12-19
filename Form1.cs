@@ -1,4 +1,7 @@
 using System.Diagnostics;
+using System.Drawing;
+using System.Security.Policy;
+using System.Windows.Forms;
 namespace OOP_Assignment
 {
     public partial class Form1 : Form
@@ -334,32 +337,62 @@ namespace OOP_Assignment
             string size = "10"; // Will change when reworking clothing system
             string colour = C_clothingColourEntry.Text;
             string style = C_clothingTypeEntry.Text;
-            string type = C_itemCombobox.Text;
-            string name = C_clothingNameEntry.Text;
-            double price = (double)C_clothingPriceEntry.Value;
-            int stockOrderLevel = (int)C_clothingRestocklEntry.Value;
-            string supplierName = C_clothingSupplierCombobox.Text;
 
-            system.add_item(type, name, price, stockOrderLevel, supplierName, new Dictionary<string, string> {
+            handle_item_errors(C_itemCombobox.Text, C_clothingNameEntry.Text, (double)C_clothingPriceEntry.Value, (int)C_clothingRestockEntry.Value,
+                C_clothingSupplierCombobox.Text, new Dictionary<string, string> {
                 {"Size", size },
                 { "Colour", colour},
                 {"Style", style }});
         }
 
-        //From test implementation. Here as reference
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    system.add_item("Bag", "MIKE Heritage", 30, 20, 15, "MIKE", new Dictionary<string, string> { { "Capacity", "25" } });
-        //}
+        private void C_shoeCreateButton_Click(object sender, EventArgs e)
+        {
+            string size = C_shoeSizeCombobox.Text;
+            string shoeType = C_shoeTypeCombobox.Text;
 
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    system.add_customer("Brain", "brain@brian.com", 10);
-        //}
+            handle_item_errors(C_itemCombobox.Text, C_shoeNameEntry.Text, (double)C_shoePriceEntry.Value, (int)C_shoeRestockEntry.Value,
+                C_shoeSupplierCombobox.Text, new Dictionary<string, string> {
+                {"Size", size },
+                { "Type", shoeType}});
+        }
 
-        //private void button3_Click(object sender, EventArgs e)
-        //{
-        //    system.add_supplier("ADIBAS");
-        //}
+        private void C_bagCreateButton_Click(object sender, EventArgs e)
+        {
+            string capacity = C_capacityEntry.Text;
+
+            handle_item_errors(C_itemCombobox.Text, C_bagNameEntry.Text, (double)C_bagPriceEntry.Value, (int)C_bagRestockEntry.Value,
+                C_bagSupplierCombobox.Text, new Dictionary<string, string> {
+                {"Capacity", capacity }});
+        }
+
+        private void C_nutrientCreateButton_Click(object sender, EventArgs e)
+        {
+            string quantity = C_quantityEntry.Text;
+            string nutrient = C_nutrientEntry.Text;
+
+            handle_item_errors(C_itemCombobox.Text, C_nutrientNameEntry.Text, (double)C_nutrientPriceEntry.Value, (int)C_nutrientRestockEntry.Value,
+                C_nutrientSupplierCombobox.Text, new Dictionary<string, string> {
+                {"Quantity", quantity },
+                {"Type", nutrient }});
+        }
+
+        private void C_watchCreateButton_Click(object sender, EventArgs e)
+        {
+            string watchType = C_watchTypeCombobox.Text;
+
+            handle_item_errors(C_itemCombobox.Text, C_watchNameEntry.Text, (double)C_watchPriceEntry.Value, (int)C_watchRestockEntry.Value,
+                C_watchSupplierCombobox.Text, new Dictionary<string, string> {
+                {"Type", watchType }});
+        }
+
+        private void handle_item_errors(string type, string name, double price, int stockOrderLevel, string supplierName, Dictionary<string, string> misc)
+        {
+            // Error handling references
+            //string name = C_clothingNameEntry.Text;
+            //double price = (double)C_clothingPriceEntry.Value;
+            //int stockOrderLevel = (int)C_clothingRestocklEntry.Value;
+            //string supplierName = C_clothingSupplierCombobox.Text;
+            system.add_item(type, name, price, stockOrderLevel, supplierName, misc);
+        }
     }
 }

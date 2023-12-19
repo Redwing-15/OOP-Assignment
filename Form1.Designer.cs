@@ -90,13 +90,61 @@
             label21 = new Label();
             label20 = new Label();
             label19 = new Label();
-            C_clothingRestocklEntry = new NumericUpDown();
+            C_clothingRestockEntry = new NumericUpDown();
             C_clothingPriceEntry = new NumericUpDown();
             C_clothingColourEntry = new TextBox();
             shoePage = new TabPage();
+            label31 = new Label();
+            C_shoeSizeCombobox = new ComboBox();
+            label30 = new Label();
+            C_shoeTypeCombobox = new ComboBox();
+            label26 = new Label();
+            C_shoeSupplierCombobox = new ComboBox();
+            C_shoeNameEntry = new TextBox();
+            C_shoeCreateButton = new Button();
+            label27 = new Label();
+            label28 = new Label();
+            label29 = new Label();
+            C_shoeRestockEntry = new NumericUpDown();
+            C_shoePriceEntry = new NumericUpDown();
             bagPage = new TabPage();
+            C_capacityEntry = new TextBox();
+            label36 = new Label();
+            label32 = new Label();
+            C_bagSupplierCombobox = new ComboBox();
+            C_bagNameEntry = new TextBox();
+            C_bagCreateButton = new Button();
+            label33 = new Label();
+            label34 = new Label();
+            label35 = new Label();
+            C_bagRestockEntry = new NumericUpDown();
+            C_bagPriceEntry = new NumericUpDown();
             nutritionPage = new TabPage();
+            C_nutrientEntry = new ComboBox();
+            label42 = new Label();
+            C_quantityEntry = new TextBox();
+            label41 = new Label();
+            label37 = new Label();
+            C_nutrientSupplierCombobox = new ComboBox();
+            C_nutrientNameEntry = new TextBox();
+            C_nutrientCreateButton = new Button();
+            label38 = new Label();
+            label39 = new Label();
+            label40 = new Label();
+            C_nutrientRestockEntry = new NumericUpDown();
+            C_nutrientPriceEntry = new NumericUpDown();
             watchPage = new TabPage();
+            C_watchTypeCombobox = new ComboBox();
+            label43 = new Label();
+            label44 = new Label();
+            C_watchSupplierCombobox = new ComboBox();
+            C_watchNameEntry = new TextBox();
+            C_watchCreateButton = new Button();
+            label45 = new Label();
+            label46 = new Label();
+            label47 = new Label();
+            C_watchRestockEntry = new NumericUpDown();
+            C_watchPriceEntry = new NumericUpDown();
             C_itemCombobox = new ComboBox();
             tabControl1.SuspendLayout();
             transactionsPage.SuspendLayout();
@@ -110,8 +158,20 @@
             ((System.ComponentModel.ISupportInitialize)C_balanceEntry).BeginInit();
             supplierPage.SuspendLayout();
             clothingPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)C_clothingRestocklEntry).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C_clothingRestockEntry).BeginInit();
             ((System.ComponentModel.ISupportInitialize)C_clothingPriceEntry).BeginInit();
+            shoePage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)C_shoeRestockEntry).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C_shoePriceEntry).BeginInit();
+            bagPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)C_bagRestockEntry).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C_bagPriceEntry).BeginInit();
+            nutritionPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)C_nutrientRestockEntry).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C_nutrientPriceEntry).BeginInit();
+            watchPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)C_watchRestockEntry).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C_watchPriceEntry).BeginInit();
             SuspendLayout();
             // 
             // T_itemCombobox
@@ -532,7 +592,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(45, 128);
+            label17.Location = new Point(224, 161);
             label17.Name = "label17";
             label17.Size = new Size(64, 20);
             label17.TabIndex = 6;
@@ -541,7 +601,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(45, 78);
+            label16.Location = new Point(224, 111);
             label16.Name = "label16";
             label16.Size = new Size(49, 20);
             label16.TabIndex = 5;
@@ -550,7 +610,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(45, 33);
+            label15.Location = new Point(224, 66);
             label15.Name = "label15";
             label15.Size = new Size(52, 20);
             label15.TabIndex = 4;
@@ -558,7 +618,7 @@
             // 
             // C_customerCreateButton
             // 
-            C_customerCreateButton.Location = new Point(110, 170);
+            C_customerCreateButton.Location = new Point(289, 203);
             C_customerCreateButton.Name = "C_customerCreateButton";
             C_customerCreateButton.Size = new Size(130, 29);
             C_customerCreateButton.TabIndex = 3;
@@ -568,21 +628,21 @@
             // 
             // C_balanceEntry
             // 
-            C_balanceEntry.Location = new Point(115, 126);
+            C_balanceEntry.Location = new Point(294, 159);
             C_balanceEntry.Name = "C_balanceEntry";
             C_balanceEntry.Size = new Size(94, 27);
             C_balanceEntry.TabIndex = 2;
             // 
             // C_emailEntry
             // 
-            C_emailEntry.Location = new Point(115, 75);
+            C_emailEntry.Location = new Point(294, 108);
             C_emailEntry.Name = "C_emailEntry";
             C_emailEntry.Size = new Size(125, 27);
             C_emailEntry.TabIndex = 1;
             // 
             // C_customerEntry
             // 
-            C_customerEntry.Location = new Point(115, 30);
+            C_customerEntry.Location = new Point(294, 63);
             C_customerEntry.Name = "C_customerEntry";
             C_customerEntry.Size = new Size(125, 27);
             C_customerEntry.TabIndex = 0;
@@ -602,7 +662,7 @@
             // 
             // C_supplierCreateButton
             // 
-            C_supplierCreateButton.Location = new Point(152, 107);
+            C_supplierCreateButton.Location = new Point(295, 132);
             C_supplierCreateButton.Name = "C_supplierCreateButton";
             C_supplierCreateButton.Size = new Size(123, 29);
             C_supplierCreateButton.TabIndex = 2;
@@ -612,7 +672,7 @@
             // 
             // C_supplierNameEntry
             // 
-            C_supplierNameEntry.Location = new Point(149, 63);
+            C_supplierNameEntry.Location = new Point(292, 88);
             C_supplierNameEntry.Name = "C_supplierNameEntry";
             C_supplierNameEntry.Size = new Size(125, 27);
             C_supplierNameEntry.TabIndex = 1;
@@ -620,7 +680,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(91, 66);
+            label18.Location = new Point(234, 91);
             label18.Name = "label18";
             label18.Size = new Size(52, 20);
             label18.TabIndex = 0;
@@ -640,7 +700,7 @@
             clothingPage.Controls.Add(label21);
             clothingPage.Controls.Add(label20);
             clothingPage.Controls.Add(label19);
-            clothingPage.Controls.Add(C_clothingRestocklEntry);
+            clothingPage.Controls.Add(C_clothingRestockEntry);
             clothingPage.Controls.Add(C_clothingPriceEntry);
             clothingPage.Controls.Add(C_clothingColourEntry);
             clothingPage.Location = new Point(4, 29);
@@ -653,7 +713,7 @@
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(168, 28);
+            label25.Location = new Point(228, 40);
             label25.Name = "label25";
             label25.Size = new Size(67, 20);
             label25.TabIndex = 17;
@@ -663,7 +723,7 @@
             // 
             C_clothingSupplierCombobox.FormattingEnabled = true;
             C_clothingSupplierCombobox.Items.AddRange(new object[] { "MIKE" });
-            C_clothingSupplierCombobox.Location = new Point(241, 25);
+            C_clothingSupplierCombobox.Location = new Point(301, 37);
             C_clothingSupplierCombobox.Name = "C_clothingSupplierCombobox";
             C_clothingSupplierCombobox.Size = new Size(116, 28);
             C_clothingSupplierCombobox.TabIndex = 16;
@@ -673,7 +733,7 @@
             C_clothingTypeEntry.DropDownStyle = ComboBoxStyle.DropDownList;
             C_clothingTypeEntry.FormattingEnabled = true;
             C_clothingTypeEntry.Items.AddRange(new object[] { "Vest", "Top", "Jacket", "Shorts", "Capri Trousers", "Leggings" });
-            C_clothingTypeEntry.Location = new Point(123, 167);
+            C_clothingTypeEntry.Location = new Point(434, 186);
             C_clothingTypeEntry.Name = "C_clothingTypeEntry";
             C_clothingTypeEntry.Size = new Size(125, 28);
             C_clothingTypeEntry.TabIndex = 15;
@@ -683,21 +743,21 @@
             C_clothingSizeEntry.DropDownStyle = ComboBoxStyle.DropDownList;
             C_clothingSizeEntry.FormattingEnabled = true;
             C_clothingSizeEntry.Items.AddRange(new object[] { "XS", "S", "M", "L", "XL", "XXL" });
-            C_clothingSizeEntry.Location = new Point(123, 70);
+            C_clothingSizeEntry.Location = new Point(433, 89);
             C_clothingSizeEntry.Name = "C_clothingSizeEntry";
             C_clothingSizeEntry.Size = new Size(125, 28);
             C_clothingSizeEntry.TabIndex = 14;
             // 
             // C_clothingNameEntry
             // 
-            C_clothingNameEntry.Location = new Point(383, 67);
+            C_clothingNameEntry.Location = new Point(228, 89);
             C_clothingNameEntry.Name = "C_clothingNameEntry";
             C_clothingNameEntry.Size = new Size(125, 27);
             C_clothingNameEntry.TabIndex = 13;
             // 
             // C_clothingCreateButton
             // 
-            C_clothingCreateButton.Location = new Point(230, 225);
+            C_clothingCreateButton.Location = new Point(290, 237);
             C_clothingCreateButton.Name = "C_clothingCreateButton";
             C_clothingCreateButton.Size = new Size(127, 29);
             C_clothingCreateButton.TabIndex = 12;
@@ -708,7 +768,7 @@
             // label24
             // 
             label24.AutoSize = true;
-            label24.Location = new Point(319, 152);
+            label24.Location = new Point(164, 174);
             label24.Name = "label24";
             label24.Size = new Size(115, 20);
             label24.TabIndex = 11;
@@ -717,7 +777,7 @@
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(319, 109);
+            label23.Location = new Point(164, 131);
             label23.Name = "label23";
             label23.Size = new Size(41, 20);
             label23.TabIndex = 10;
@@ -726,7 +786,7 @@
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(319, 70);
+            label22.Location = new Point(164, 89);
             label22.Name = "label22";
             label22.Size = new Size(49, 20);
             label22.TabIndex = 9;
@@ -735,7 +795,7 @@
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(72, 170);
+            label21.Location = new Point(383, 189);
             label21.Name = "label21";
             label21.Size = new Size(40, 20);
             label21.TabIndex = 8;
@@ -744,7 +804,7 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(69, 118);
+            label20.Location = new Point(380, 137);
             label20.Name = "label20";
             label20.Size = new Size(53, 20);
             label20.TabIndex = 7;
@@ -753,23 +813,23 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(72, 73);
+            label19.Location = new Point(383, 92);
             label19.Name = "label19";
             label19.Size = new Size(36, 20);
             label19.TabIndex = 6;
             label19.Text = "Size";
             // 
-            // C_clothingRestocklEntry
+            // C_clothingRestockEntry
             // 
-            C_clothingRestocklEntry.Location = new Point(443, 152);
-            C_clothingRestocklEntry.Name = "C_clothingRestocklEntry";
-            C_clothingRestocklEntry.Size = new Size(56, 27);
-            C_clothingRestocklEntry.TabIndex = 5;
-            C_clothingRestocklEntry.TextAlign = HorizontalAlignment.Right;
+            C_clothingRestockEntry.Location = new Point(288, 174);
+            C_clothingRestockEntry.Name = "C_clothingRestockEntry";
+            C_clothingRestockEntry.Size = new Size(56, 27);
+            C_clothingRestockEntry.TabIndex = 5;
+            C_clothingRestockEntry.TextAlign = HorizontalAlignment.Right;
             // 
             // C_clothingPriceEntry
             // 
-            C_clothingPriceEntry.Location = new Point(383, 109);
+            C_clothingPriceEntry.Location = new Point(228, 131);
             C_clothingPriceEntry.Name = "C_clothingPriceEntry";
             C_clothingPriceEntry.Size = new Size(73, 27);
             C_clothingPriceEntry.TabIndex = 4;
@@ -777,13 +837,26 @@
             // 
             // C_clothingColourEntry
             // 
-            C_clothingColourEntry.Location = new Point(123, 115);
+            C_clothingColourEntry.Location = new Point(434, 134);
             C_clothingColourEntry.Name = "C_clothingColourEntry";
             C_clothingColourEntry.Size = new Size(125, 27);
             C_clothingColourEntry.TabIndex = 1;
             // 
             // shoePage
             // 
+            shoePage.Controls.Add(label31);
+            shoePage.Controls.Add(C_shoeSizeCombobox);
+            shoePage.Controls.Add(label30);
+            shoePage.Controls.Add(C_shoeTypeCombobox);
+            shoePage.Controls.Add(label26);
+            shoePage.Controls.Add(C_shoeSupplierCombobox);
+            shoePage.Controls.Add(C_shoeNameEntry);
+            shoePage.Controls.Add(C_shoeCreateButton);
+            shoePage.Controls.Add(label27);
+            shoePage.Controls.Add(label28);
+            shoePage.Controls.Add(label29);
+            shoePage.Controls.Add(C_shoeRestockEntry);
+            shoePage.Controls.Add(C_shoePriceEntry);
             shoePage.Location = new Point(4, 29);
             shoePage.Name = "shoePage";
             shoePage.Size = new Size(784, 327);
@@ -791,8 +864,135 @@
             shoePage.Text = "Shoe";
             shoePage.UseVisualStyleBackColor = true;
             // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Location = new Point(392, 158);
+            label31.Name = "label31";
+            label31.Size = new Size(80, 20);
+            label31.TabIndex = 30;
+            label31.Text = "Shoe Type:";
+            // 
+            // C_shoeSizeCombobox
+            // 
+            C_shoeSizeCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            C_shoeSizeCombobox.FormattingEnabled = true;
+            C_shoeSizeCombobox.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16" });
+            C_shoeSizeCombobox.Location = new Point(478, 98);
+            C_shoeSizeCombobox.Name = "C_shoeSizeCombobox";
+            C_shoeSizeCombobox.Size = new Size(125, 28);
+            C_shoeSizeCombobox.TabIndex = 29;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(392, 104);
+            label30.Name = "label30";
+            label30.Size = new Size(36, 20);
+            label30.TabIndex = 28;
+            label30.Text = "Size";
+            // 
+            // C_shoeTypeCombobox
+            // 
+            C_shoeTypeCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            C_shoeTypeCombobox.FormattingEnabled = true;
+            C_shoeTypeCombobox.Items.AddRange(new object[] { "Racer", "Stability", "Neutral", "Trail", "Track" });
+            C_shoeTypeCombobox.Location = new Point(478, 155);
+            C_shoeTypeCombobox.Name = "C_shoeTypeCombobox";
+            C_shoeTypeCombobox.Size = new Size(125, 28);
+            C_shoeTypeCombobox.TabIndex = 27;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(222, 52);
+            label26.Name = "label26";
+            label26.Size = new Size(67, 20);
+            label26.TabIndex = 26;
+            label26.Text = "Supplier:";
+            // 
+            // C_shoeSupplierCombobox
+            // 
+            C_shoeSupplierCombobox.FormattingEnabled = true;
+            C_shoeSupplierCombobox.Items.AddRange(new object[] { "MIKE" });
+            C_shoeSupplierCombobox.Location = new Point(295, 49);
+            C_shoeSupplierCombobox.Name = "C_shoeSupplierCombobox";
+            C_shoeSupplierCombobox.Size = new Size(116, 28);
+            C_shoeSupplierCombobox.TabIndex = 25;
+            // 
+            // C_shoeNameEntry
+            // 
+            C_shoeNameEntry.Location = new Point(196, 98);
+            C_shoeNameEntry.Name = "C_shoeNameEntry";
+            C_shoeNameEntry.Size = new Size(125, 27);
+            C_shoeNameEntry.TabIndex = 24;
+            // 
+            // C_shoeCreateButton
+            // 
+            C_shoeCreateButton.Location = new Point(295, 235);
+            C_shoeCreateButton.Name = "C_shoeCreateButton";
+            C_shoeCreateButton.Size = new Size(100, 29);
+            C_shoeCreateButton.TabIndex = 23;
+            C_shoeCreateButton.Text = "Create Shoe";
+            C_shoeCreateButton.UseVisualStyleBackColor = true;
+            C_shoeCreateButton.Click += C_shoeCreateButton_Click;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(132, 183);
+            label27.Name = "label27";
+            label27.Size = new Size(115, 20);
+            label27.TabIndex = 22;
+            label27.Text = "Restock amount";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(132, 140);
+            label28.Name = "label28";
+            label28.Size = new Size(41, 20);
+            label28.TabIndex = 21;
+            label28.Text = "Price";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(132, 101);
+            label29.Name = "label29";
+            label29.Size = new Size(49, 20);
+            label29.TabIndex = 20;
+            label29.Text = "Name";
+            // 
+            // C_shoeRestockEntry
+            // 
+            C_shoeRestockEntry.Location = new Point(256, 183);
+            C_shoeRestockEntry.Name = "C_shoeRestockEntry";
+            C_shoeRestockEntry.Size = new Size(56, 27);
+            C_shoeRestockEntry.TabIndex = 19;
+            C_shoeRestockEntry.TextAlign = HorizontalAlignment.Right;
+            // 
+            // C_shoePriceEntry
+            // 
+            C_shoePriceEntry.Location = new Point(196, 140);
+            C_shoePriceEntry.Name = "C_shoePriceEntry";
+            C_shoePriceEntry.Size = new Size(73, 27);
+            C_shoePriceEntry.TabIndex = 18;
+            C_shoePriceEntry.TextAlign = HorizontalAlignment.Right;
+            // 
             // bagPage
             // 
+            bagPage.Controls.Add(C_capacityEntry);
+            bagPage.Controls.Add(label36);
+            bagPage.Controls.Add(label32);
+            bagPage.Controls.Add(C_bagSupplierCombobox);
+            bagPage.Controls.Add(C_bagNameEntry);
+            bagPage.Controls.Add(C_bagCreateButton);
+            bagPage.Controls.Add(label33);
+            bagPage.Controls.Add(label34);
+            bagPage.Controls.Add(label35);
+            bagPage.Controls.Add(C_bagRestockEntry);
+            bagPage.Controls.Add(C_bagPriceEntry);
             bagPage.Location = new Point(4, 29);
             bagPage.Name = "bagPage";
             bagPage.Size = new Size(784, 327);
@@ -800,8 +1000,115 @@
             bagPage.Text = "Bag";
             bagPage.UseVisualStyleBackColor = true;
             // 
+            // C_capacityEntry
+            // 
+            C_capacityEntry.Location = new Point(462, 101);
+            C_capacityEntry.Name = "C_capacityEntry";
+            C_capacityEntry.Size = new Size(82, 27);
+            C_capacityEntry.TabIndex = 37;
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Location = new Point(390, 104);
+            label36.Name = "label36";
+            label36.Size = new Size(66, 20);
+            label36.TabIndex = 36;
+            label36.Text = "Capacity";
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Location = new Point(244, 51);
+            label32.Name = "label32";
+            label32.Size = new Size(67, 20);
+            label32.TabIndex = 35;
+            label32.Text = "Supplier:";
+            // 
+            // C_bagSupplierCombobox
+            // 
+            C_bagSupplierCombobox.FormattingEnabled = true;
+            C_bagSupplierCombobox.Items.AddRange(new object[] { "MIKE" });
+            C_bagSupplierCombobox.Location = new Point(317, 48);
+            C_bagSupplierCombobox.Name = "C_bagSupplierCombobox";
+            C_bagSupplierCombobox.Size = new Size(116, 28);
+            C_bagSupplierCombobox.TabIndex = 34;
+            // 
+            // C_bagNameEntry
+            // 
+            C_bagNameEntry.Location = new Point(218, 97);
+            C_bagNameEntry.Name = "C_bagNameEntry";
+            C_bagNameEntry.Size = new Size(125, 27);
+            C_bagNameEntry.TabIndex = 33;
+            // 
+            // C_bagCreateButton
+            // 
+            C_bagCreateButton.Location = new Point(317, 230);
+            C_bagCreateButton.Name = "C_bagCreateButton";
+            C_bagCreateButton.Size = new Size(98, 29);
+            C_bagCreateButton.TabIndex = 32;
+            C_bagCreateButton.Text = "Create Bag";
+            C_bagCreateButton.UseVisualStyleBackColor = true;
+            C_bagCreateButton.Click += C_bagCreateButton_Click;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Location = new Point(154, 182);
+            label33.Name = "label33";
+            label33.Size = new Size(115, 20);
+            label33.TabIndex = 31;
+            label33.Text = "Restock amount";
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Location = new Point(154, 139);
+            label34.Name = "label34";
+            label34.Size = new Size(41, 20);
+            label34.TabIndex = 30;
+            label34.Text = "Price";
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Location = new Point(154, 100);
+            label35.Name = "label35";
+            label35.Size = new Size(49, 20);
+            label35.TabIndex = 29;
+            label35.Text = "Name";
+            // 
+            // C_bagRestockEntry
+            // 
+            C_bagRestockEntry.Location = new Point(278, 182);
+            C_bagRestockEntry.Name = "C_bagRestockEntry";
+            C_bagRestockEntry.Size = new Size(56, 27);
+            C_bagRestockEntry.TabIndex = 28;
+            C_bagRestockEntry.TextAlign = HorizontalAlignment.Right;
+            // 
+            // C_bagPriceEntry
+            // 
+            C_bagPriceEntry.Location = new Point(218, 139);
+            C_bagPriceEntry.Name = "C_bagPriceEntry";
+            C_bagPriceEntry.Size = new Size(73, 27);
+            C_bagPriceEntry.TabIndex = 27;
+            C_bagPriceEntry.TextAlign = HorizontalAlignment.Right;
+            // 
             // nutritionPage
             // 
+            nutritionPage.Controls.Add(C_nutrientEntry);
+            nutritionPage.Controls.Add(label42);
+            nutritionPage.Controls.Add(C_quantityEntry);
+            nutritionPage.Controls.Add(label41);
+            nutritionPage.Controls.Add(label37);
+            nutritionPage.Controls.Add(C_nutrientSupplierCombobox);
+            nutritionPage.Controls.Add(C_nutrientNameEntry);
+            nutritionPage.Controls.Add(C_nutrientCreateButton);
+            nutritionPage.Controls.Add(label38);
+            nutritionPage.Controls.Add(label39);
+            nutritionPage.Controls.Add(label40);
+            nutritionPage.Controls.Add(C_nutrientRestockEntry);
+            nutritionPage.Controls.Add(C_nutrientPriceEntry);
             nutritionPage.Location = new Point(4, 29);
             nutritionPage.Name = "nutritionPage";
             nutritionPage.Size = new Size(784, 327);
@@ -809,14 +1116,235 @@
             nutritionPage.Text = "Nutrition";
             nutritionPage.UseVisualStyleBackColor = true;
             // 
+            // C_nutrientEntry
+            // 
+            C_nutrientEntry.DropDownStyle = ComboBoxStyle.DropDownList;
+            C_nutrientEntry.FormattingEnabled = true;
+            C_nutrientEntry.Items.AddRange(new object[] { "Carbohydrate", "Proteins", "Fats", "Vitamins", "Minerals", "Fiber" });
+            C_nutrientEntry.Location = new Point(465, 139);
+            C_nutrientEntry.Name = "C_nutrientEntry";
+            C_nutrientEntry.Size = new Size(125, 28);
+            C_nutrientEntry.TabIndex = 48;
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Location = new Point(393, 142);
+            label42.Name = "label42";
+            label42.Size = new Size(66, 20);
+            label42.TabIndex = 47;
+            label42.Text = "Nutrient:";
+            // 
+            // C_quantityEntry
+            // 
+            C_quantityEntry.Location = new Point(465, 98);
+            C_quantityEntry.Name = "C_quantityEntry";
+            C_quantityEntry.Size = new Size(125, 27);
+            C_quantityEntry.TabIndex = 46;
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Location = new Point(393, 101);
+            label41.Name = "label41";
+            label41.Size = new Size(65, 20);
+            label41.TabIndex = 45;
+            label41.Text = "Quantity";
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Location = new Point(254, 52);
+            label37.Name = "label37";
+            label37.Size = new Size(67, 20);
+            label37.TabIndex = 44;
+            label37.Text = "Supplier:";
+            // 
+            // C_nutrientSupplierCombobox
+            // 
+            C_nutrientSupplierCombobox.FormattingEnabled = true;
+            C_nutrientSupplierCombobox.Items.AddRange(new object[] { "MIKE" });
+            C_nutrientSupplierCombobox.Location = new Point(327, 49);
+            C_nutrientSupplierCombobox.Name = "C_nutrientSupplierCombobox";
+            C_nutrientSupplierCombobox.Size = new Size(116, 28);
+            C_nutrientSupplierCombobox.TabIndex = 43;
+            // 
+            // C_nutrientNameEntry
+            // 
+            C_nutrientNameEntry.Location = new Point(228, 98);
+            C_nutrientNameEntry.Name = "C_nutrientNameEntry";
+            C_nutrientNameEntry.Size = new Size(125, 27);
+            C_nutrientNameEntry.TabIndex = 42;
+            // 
+            // C_nutrientCreateButton
+            // 
+            C_nutrientCreateButton.Location = new Point(312, 234);
+            C_nutrientCreateButton.Name = "C_nutrientCreateButton";
+            C_nutrientCreateButton.Size = new Size(131, 29);
+            C_nutrientCreateButton.TabIndex = 41;
+            C_nutrientCreateButton.Text = "Create Nutrient";
+            C_nutrientCreateButton.UseVisualStyleBackColor = true;
+            C_nutrientCreateButton.Click += C_nutrientCreateButton_Click;
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Location = new Point(164, 183);
+            label38.Name = "label38";
+            label38.Size = new Size(115, 20);
+            label38.TabIndex = 40;
+            label38.Text = "Restock amount";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(164, 140);
+            label39.Name = "label39";
+            label39.Size = new Size(41, 20);
+            label39.TabIndex = 39;
+            label39.Text = "Price";
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Location = new Point(164, 101);
+            label40.Name = "label40";
+            label40.Size = new Size(49, 20);
+            label40.TabIndex = 38;
+            label40.Text = "Name";
+            // 
+            // C_nutrientRestockEntry
+            // 
+            C_nutrientRestockEntry.Location = new Point(288, 183);
+            C_nutrientRestockEntry.Name = "C_nutrientRestockEntry";
+            C_nutrientRestockEntry.Size = new Size(56, 27);
+            C_nutrientRestockEntry.TabIndex = 37;
+            C_nutrientRestockEntry.TextAlign = HorizontalAlignment.Right;
+            // 
+            // C_nutrientPriceEntry
+            // 
+            C_nutrientPriceEntry.Location = new Point(228, 140);
+            C_nutrientPriceEntry.Name = "C_nutrientPriceEntry";
+            C_nutrientPriceEntry.Size = new Size(73, 27);
+            C_nutrientPriceEntry.TabIndex = 36;
+            C_nutrientPriceEntry.TextAlign = HorizontalAlignment.Right;
+            // 
             // watchPage
             // 
+            watchPage.Controls.Add(C_watchTypeCombobox);
+            watchPage.Controls.Add(label43);
+            watchPage.Controls.Add(label44);
+            watchPage.Controls.Add(C_watchSupplierCombobox);
+            watchPage.Controls.Add(C_watchNameEntry);
+            watchPage.Controls.Add(C_watchCreateButton);
+            watchPage.Controls.Add(label45);
+            watchPage.Controls.Add(label46);
+            watchPage.Controls.Add(label47);
+            watchPage.Controls.Add(C_watchRestockEntry);
+            watchPage.Controls.Add(C_watchPriceEntry);
             watchPage.Location = new Point(4, 29);
             watchPage.Name = "watchPage";
             watchPage.Size = new Size(784, 327);
             watchPage.TabIndex = 6;
             watchPage.Text = "Watch";
             watchPage.UseVisualStyleBackColor = true;
+            // 
+            // C_watchTypeCombobox
+            // 
+            C_watchTypeCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            C_watchTypeCombobox.FormattingEnabled = true;
+            C_watchTypeCombobox.Items.AddRange(new object[] { "Simple", "Heart Rate", "GPS", "GPSandHeartRate" });
+            C_watchTypeCombobox.Location = new Point(479, 102);
+            C_watchTypeCombobox.Name = "C_watchTypeCombobox";
+            C_watchTypeCombobox.Size = new Size(125, 28);
+            C_watchTypeCombobox.TabIndex = 59;
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Location = new Point(418, 105);
+            label43.Name = "label43";
+            label43.Size = new Size(40, 20);
+            label43.TabIndex = 58;
+            label43.Text = "Type";
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Location = new Point(269, 59);
+            label44.Name = "label44";
+            label44.Size = new Size(67, 20);
+            label44.TabIndex = 57;
+            label44.Text = "Supplier:";
+            // 
+            // C_watchSupplierCombobox
+            // 
+            C_watchSupplierCombobox.FormattingEnabled = true;
+            C_watchSupplierCombobox.Items.AddRange(new object[] { "MIKE" });
+            C_watchSupplierCombobox.Location = new Point(342, 56);
+            C_watchSupplierCombobox.Name = "C_watchSupplierCombobox";
+            C_watchSupplierCombobox.Size = new Size(116, 28);
+            C_watchSupplierCombobox.TabIndex = 56;
+            // 
+            // C_watchNameEntry
+            // 
+            C_watchNameEntry.Location = new Point(243, 105);
+            C_watchNameEntry.Name = "C_watchNameEntry";
+            C_watchNameEntry.Size = new Size(125, 27);
+            C_watchNameEntry.TabIndex = 55;
+            // 
+            // C_watchCreateButton
+            // 
+            C_watchCreateButton.Location = new Point(327, 241);
+            C_watchCreateButton.Name = "C_watchCreateButton";
+            C_watchCreateButton.Size = new Size(131, 29);
+            C_watchCreateButton.TabIndex = 54;
+            C_watchCreateButton.Text = "Create Nutrient";
+            C_watchCreateButton.UseVisualStyleBackColor = true;
+            C_watchCreateButton.Click += C_watchCreateButton_Click;
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Location = new Point(179, 190);
+            label45.Name = "label45";
+            label45.Size = new Size(115, 20);
+            label45.TabIndex = 53;
+            label45.Text = "Restock amount";
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Location = new Point(179, 147);
+            label46.Name = "label46";
+            label46.Size = new Size(41, 20);
+            label46.TabIndex = 52;
+            label46.Text = "Price";
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Location = new Point(179, 108);
+            label47.Name = "label47";
+            label47.Size = new Size(49, 20);
+            label47.TabIndex = 51;
+            label47.Text = "Name";
+            // 
+            // C_watchRestockEntry
+            // 
+            C_watchRestockEntry.Location = new Point(303, 190);
+            C_watchRestockEntry.Name = "C_watchRestockEntry";
+            C_watchRestockEntry.Size = new Size(56, 27);
+            C_watchRestockEntry.TabIndex = 50;
+            C_watchRestockEntry.TextAlign = HorizontalAlignment.Right;
+            // 
+            // C_watchPriceEntry
+            // 
+            C_watchPriceEntry.Location = new Point(243, 147);
+            C_watchPriceEntry.Name = "C_watchPriceEntry";
+            C_watchPriceEntry.Size = new Size(73, 27);
+            C_watchPriceEntry.TabIndex = 49;
+            C_watchPriceEntry.TextAlign = HorizontalAlignment.Right;
             // 
             // C_itemCombobox
             // 
@@ -855,8 +1383,24 @@
             supplierPage.PerformLayout();
             clothingPage.ResumeLayout(false);
             clothingPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)C_clothingRestocklEntry).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C_clothingRestockEntry).EndInit();
             ((System.ComponentModel.ISupportInitialize)C_clothingPriceEntry).EndInit();
+            shoePage.ResumeLayout(false);
+            shoePage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)C_shoeRestockEntry).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C_shoePriceEntry).EndInit();
+            bagPage.ResumeLayout(false);
+            bagPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)C_bagRestockEntry).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C_bagPriceEntry).EndInit();
+            nutritionPage.ResumeLayout(false);
+            nutritionPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)C_nutrientRestockEntry).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C_nutrientPriceEntry).EndInit();
+            watchPage.ResumeLayout(false);
+            watchPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)C_watchRestockEntry).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C_watchPriceEntry).EndInit();
             ResumeLayout(false);
         }
 
@@ -917,9 +1461,8 @@
         private TextBox C_supplierNameEntry;
         private Label label18;
         private Button C_supplierCreateButton;
-        private TextBox C_sizeEntry;
         private TextBox C_clothingColourEntry;
-        private NumericUpDown C_clothingRestocklEntry;
+        private NumericUpDown C_clothingRestockEntry;
         private NumericUpDown C_clothingPriceEntry;
         private Button C_clothingCreateButton;
         private Label label24;
@@ -933,5 +1476,53 @@
         private TextBox C_clothingNameEntry;
         private Label label25;
         private ComboBox C_clothingSupplierCombobox;
+        private Label label26;
+        private ComboBox C_shoeSupplierCombobox;
+        private TextBox C_shoeNameEntry;
+        private Button C_shoeCreateButton;
+        private Label label27;
+        private Label label28;
+        private Label label29;
+        private NumericUpDown C_shoeRestockEntry;
+        private NumericUpDown C_shoePriceEntry;
+        private Label label31;
+        private ComboBox C_shoeSizeCombobox;
+        private Label label30;
+        private ComboBox C_shoeTypeCombobox;
+        private Label label32;
+        private ComboBox C_bagSupplierCombobox;
+        private TextBox C_bagNameEntry;
+        private Button C_bagCreateButton;
+        private Label label33;
+        private Label label34;
+        private Label label35;
+        private NumericUpDown C_bagRestockEntry;
+        private NumericUpDown C_bagPriceEntry;
+        private TextBox C_capacityEntry;
+        private Label label36;
+        private TextBox C_quantityEntry;
+        private Label label41;
+        private Label label37;
+        private ComboBox C_nutrientSupplierCombobox;
+        private TextBox C_nutrientNameEntry;
+        private Button C_nutrientCreateButton;
+        private Label label38;
+        private Label label39;
+        private Label label40;
+        private NumericUpDown C_nutrientRestockEntry;
+        private NumericUpDown C_nutrientPriceEntry;
+        private ComboBox C_nutrientEntry;
+        private Label label42;
+        private ComboBox C_watchTypeCombobox;
+        private Label label43;
+        private Label label44;
+        private ComboBox C_watchSupplierCombobox;
+        private TextBox C_watchNameEntry;
+        private Button C_watchCreateButton;
+        private Label label45;
+        private Label label46;
+        private Label label47;
+        private NumericUpDown C_watchRestockEntry;
+        private NumericUpDown C_watchPriceEntry;
     }
 }

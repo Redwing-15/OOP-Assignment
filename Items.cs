@@ -72,8 +72,8 @@ namespace OOP_Assignment
         {
             return $"""
                 Price:  £{Price.ToString("0.00")}
-                Type:   {Type}
-                Size:   {Size}
+                Shoe Type:   {Type}
+                Shoe Size:   {Size}
                 Brand:  {Supplier}
                 Stock:  {Stock}
                 """;

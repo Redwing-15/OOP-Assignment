@@ -178,16 +178,16 @@
             // 
             T_itemCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
             T_itemCombobox.FormattingEnabled = true;
-            T_itemCombobox.Location = new Point(600, 22);
+            T_itemCombobox.Location = new Point(580, 19);
             T_itemCombobox.Name = "T_itemCombobox";
-            T_itemCombobox.Size = new Size(151, 28);
+            T_itemCombobox.Size = new Size(184, 28);
             T_itemCombobox.TabIndex = 0;
             T_itemCombobox.SelectedIndexChanged += T_itemsCombobox_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(546, 25);
+            label1.Location = new Point(526, 22);
             label1.Name = "label1";
             label1.Size = new Size(42, 20);
             label1.TabIndex = 1;
@@ -284,7 +284,7 @@
             // T_purchaseTotal
             // 
             T_purchaseTotal.BackColor = SystemColors.Window;
-            T_purchaseTotal.Location = new Point(633, 229);
+            T_purchaseTotal.Location = new Point(613, 221);
             T_purchaseTotal.Name = "T_purchaseTotal";
             T_purchaseTotal.ReadOnly = true;
             T_purchaseTotal.Size = new Size(86, 27);
@@ -293,7 +293,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(546, 232);
+            label7.Location = new Point(526, 224);
             label7.Name = "label7";
             label7.Size = new Size(81, 20);
             label7.TabIndex = 19;
@@ -323,17 +323,17 @@
             // 
             T_itemInfoTextbox.BackColor = SystemColors.Menu;
             T_itemInfoTextbox.BorderStyle = BorderStyle.None;
-            T_itemInfoTextbox.Location = new Point(546, 66);
+            T_itemInfoTextbox.Location = new Point(526, 63);
             T_itemInfoTextbox.Multiline = true;
             T_itemInfoTextbox.Name = "T_itemInfoTextbox";
             T_itemInfoTextbox.ReadOnly = true;
-            T_itemInfoTextbox.Size = new Size(205, 125);
+            T_itemInfoTextbox.Size = new Size(238, 125);
             T_itemInfoTextbox.TabIndex = 16;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(546, 199);
+            label5.Location = new Point(526, 191);
             label5.Name = "label5";
             label5.Size = new Size(65, 20);
             label5.TabIndex = 13;
@@ -341,7 +341,7 @@
             // 
             // T_purchaseAmountEntry
             // 
-            T_purchaseAmountEntry.Location = new Point(633, 197);
+            T_purchaseAmountEntry.Location = new Point(613, 189);
             T_purchaseAmountEntry.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
             T_purchaseAmountEntry.Name = "T_purchaseAmountEntry";
             T_purchaseAmountEntry.Size = new Size(55, 27);
@@ -351,7 +351,7 @@
             // 
             // T_purchaseButton
             // 
-            T_purchaseButton.Location = new Point(565, 262);
+            T_purchaseButton.Location = new Point(545, 254);
             T_purchaseButton.Name = "T_purchaseButton";
             T_purchaseButton.Size = new Size(94, 29);
             T_purchaseButton.TabIndex = 11;
@@ -1120,7 +1120,7 @@
             // 
             C_nutrientEntry.DropDownStyle = ComboBoxStyle.DropDownList;
             C_nutrientEntry.FormattingEnabled = true;
-            C_nutrientEntry.Items.AddRange(new object[] { "Carbohydrate", "Proteins", "Fats", "Vitamins", "Minerals", "Fiber" });
+            C_nutrientEntry.Items.AddRange(new object[] { "Carbohydrates", "Proteins", "Fats", "Vitamins", "Minerals", "Fiber" });
             C_nutrientEntry.Location = new Point(465, 139);
             C_nutrientEntry.Name = "C_nutrientEntry";
             C_nutrientEntry.Size = new Size(125, 28);
@@ -1253,7 +1253,7 @@
             // 
             C_watchTypeCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
             C_watchTypeCombobox.FormattingEnabled = true;
-            C_watchTypeCombobox.Items.AddRange(new object[] { "Simple", "Heart Rate", "GPS", "GPSandHeartRate" });
+            C_watchTypeCombobox.Items.AddRange(new object[] { "Simple", "HeartRate", "GPS", "GPSandHeartRate" });
             C_watchTypeCombobox.Location = new Point(479, 102);
             C_watchTypeCombobox.Name = "C_watchTypeCombobox";
             C_watchTypeCombobox.Size = new Size(125, 28);

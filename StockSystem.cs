@@ -1,10 +1,11 @@
 // TODO:
 // ADD ERROR CHECKING TO CREATE UI
-// ADD ENUMS TO ITEMS (Clothing, Shoe, Nutrition, Watch)
-// REWORK CLOTHING TO MAKE SIZE AN ENUM RATHER THAN AN INT
 // REWORK PURCAHSE DATE TO USE DATETIME INSTEAD OF STRING
 // REWORK PURCHASES TO BE TRACKED BY STOCKSYSTEM AND AGGREGATE INTO CUSTOMER
+//
+// BIG TODO:
 // REWORK ITEMS TO USE AN INTERFACE
+// UNIT TEST??
 
 namespace OOP_Assignment
 {
@@ -25,11 +26,11 @@ namespace OOP_Assignment
             suppliers.Add(new Supplier("Pear"));
             
 
-            suppliers[0].add_product(new Clothing(10, "Black/White", "Top", "Tracksuit Top", 80, 15, "MIKE"));
-            suppliers[0].add_product(new Shoe(9, "Racer", "Racers", 65, 20, "MIKE"));
+            suppliers[0].add_product(new Clothing(ClothingSize.M, "Black/White", ClothingStyle.Top, "Tracksuit Top", 80, 15, "MIKE"));
+            suppliers[0].add_product(new Shoe(9, ShoeType.Racer, "Racers", 65, 20, "MIKE"));
             suppliers[0].add_product(new Bag("25", "Bag", "Heritage", 30, 15, "MIKE"));
-            suppliers[1].add_product(new Nutrition("1000", "Protein", "Nutrition", "Muscle Fuel", 15, 10, "Super Nutrition"));
-            suppliers[2].add_product(new Watch("GPSandHeartRate", "Watch", "Pear Watch Series X", 500, 20, "Pear"));
+            suppliers[1].add_product(new Nutrition("1000", NutrientType.Proteins, "Nutrition", "Muscle Fuel", 15, 10, "Super Nutrition"));
+            suppliers[2].add_product(new Watch(WatchType.GPSandHeartRate, "Watch", "Pear Watch Series X", 500, 20, "Pear"));
 
             // Supplier owns the products, but stock system owns the inventory instance of each item
             foreach (Supplier supplier in suppliers) items.AddRange(supplier.Products);
@@ -71,11 +72,13 @@ namespace OOP_Assignment
             Item item;
             if (type == "Clothing")
             {
-                item = new Clothing(Convert.ToInt32(misc["Size"]), misc["Colour"], misc["Style"], name, price, stockOrderLevel, supplierName);
+                item = new Clothing((ClothingSize)Enum.Parse(typeof(ClothingSize), misc["Size"]), misc["Colour"],
+                    (ClothingStyle)Enum.Parse(typeof(ClothingStyle), misc["Style"]), name, price, stockOrderLevel, supplierName);
             }
             else if (type == "Shoe")
             {
-                item = new Shoe(Convert.ToInt32(misc["Size"]), misc["Type"], name, price, stockOrderLevel, supplierName);
+                item = new Shoe(Convert.ToInt32(misc["Size"]), (ShoeType)Enum.Parse(typeof(ShoeType), misc["Type"]),
+                    name, price, stockOrderLevel, supplierName);
             }
             else if (type == "Bag")
             {
@@ -83,11 +86,12 @@ namespace OOP_Assignment
             }
             else if (type == "Nutrition")
             {
-                item = new Nutrition(misc["Quantity"], misc["Type"], "Nutrition", name, price, stockOrderLevel, supplierName);
+                item = new Nutrition(misc["Quantity"], (NutrientType)Enum.Parse(typeof(NutrientType), misc["Type"]), "Nutrition",
+                    name, price, stockOrderLevel, supplierName);
             }
             else if (type == "Watch")
             {
-                item = new Watch(misc["Type"], "Watch", name, price, stockOrderLevel, supplierName);
+                item = new Watch((WatchType)Enum.Parse(typeof(WatchType), misc["Type"]), "Watch", name, price, stockOrderLevel, supplierName);
             }
             else
             {

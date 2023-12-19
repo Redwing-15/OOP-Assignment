@@ -30,8 +30,8 @@ namespace OOP_Assignment
     class Nutrition : Accessory
     {
         private string quantity;
-        private string nutritionType;
-        public Nutrition(string quantity, string nutritionType, string accessoryType, string name, double price,
+        private NutrientType nutritionType;
+        public Nutrition(string quantity, NutrientType nutritionType, string accessoryType, string name, double price,
             int stockorderlevel, string supplier)
             : base(accessoryType, name, price, stockorderlevel, supplier)
         {
@@ -44,7 +44,7 @@ namespace OOP_Assignment
             get { return quantity; }
             set { quantity = value; }
         }
-        public string NutritionType
+        public NutrientType NutritionType
         {
             get { return nutritionType; }
             set { nutritionType = value; }
@@ -65,14 +65,14 @@ namespace OOP_Assignment
 
     class Watch : Accessory
     {
-        private string watchType; // Simple, Heart Rate, GPS, GPSandHeartRate
-        public Watch(string watchType, string accessoryType, string name, double price, int stockorderlevel, string supplier)
+        private WatchType watchType; // Simple, Heart Rate, GPS, GPSandHeartRate
+        public Watch(WatchType watchType, string accessoryType, string name, double price, int stockorderlevel, string supplier)
             : base(accessoryType, name, price, stockorderlevel, supplier)
         {
             this.watchType = watchType;
         }
 
-        public string WatchType
+        public WatchType WatchType
         {
             get { return watchType; }
             set { watchType = value; }

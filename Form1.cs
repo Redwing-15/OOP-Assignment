@@ -1,7 +1,5 @@
 using System.Diagnostics;
-using System.Drawing;
-using System.Security.Policy;
-using System.Windows.Forms;
+
 namespace OOP_Assignment
 {
     public partial class Form1 : Form
@@ -21,7 +19,7 @@ namespace OOP_Assignment
             T_itemCombobox.Items.Clear();
             foreach (Item item in system.Items)
             {
-                T_itemCombobox.Items.Add(item.Name);
+                T_itemCombobox.Items.Add($"{item.Supplier} {item.Name}");
             }
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,7 +38,7 @@ namespace OOP_Assignment
                 T_itemCombobox.Items.Clear();
                 foreach (Item item in system.Items)
                 {
-                    T_itemCombobox.Items.Add(item.Name);
+                    T_itemCombobox.Items.Add($"{item.Supplier} {item.Name}");
                 }
 
                 T_purchaseAmountEntry.Minimum = 0;
@@ -333,8 +331,7 @@ namespace OOP_Assignment
         // NEED TO UPDATE SUPPLIER COMBOBOX FOR ALL ITEMS
         private void C_clothingCreateButton_Click(object sender, EventArgs e)
         {
-            //string size = C_clothingSizeEntry.Text;
-            string size = "10"; // Will change when reworking clothing system
+            string size = C_clothingSizeEntry.Text;
             string colour = C_clothingColourEntry.Text;
             string style = C_clothingTypeEntry.Text;
 

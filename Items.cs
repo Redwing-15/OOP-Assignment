@@ -2,12 +2,12 @@ namespace OOP_Assignment
 {
     class Clothing : Item
     {
-        private int size; // XS, S, M, L, XL, XXL
+        private ClothingSize size; // XS, S, M, L, XL, XXL
         private string colour;
-        private string style; // Shorts, Capris, Leggings, Vests, Tops, Jackets
+        private ClothingStyle style; // Shorts, Capris, Leggings, Vests, Tops, Jackets
 
         // This looks messy, interfaces will possibly fix this??
-        public Clothing(int size, string colour, string style, string name, double price, int stockorderlevel, string supplier)
+        public Clothing(ClothingSize size, string colour, ClothingStyle style, string name, double price, int stockorderlevel, string supplier)
             : base(name, price, stockorderlevel, supplier)
         {
             this.size = size;
@@ -15,7 +15,7 @@ namespace OOP_Assignment
             this.style = style;
         }
 
-        public int Size
+        public ClothingSize Size
         {
             get { return size; }
             set { size = value; }
@@ -25,7 +25,7 @@ namespace OOP_Assignment
             get { return colour; }
             set { colour = value; }
         }
-        public string Style
+        public ClothingStyle Style
         {
             get { return style; }
             set { style = value; }
@@ -47,10 +47,10 @@ namespace OOP_Assignment
     class Shoe : Item
     {
         private int size;
-        private string type; // Racer, Stability, Neutral, Trail, Track
+        private ShoeType type; // Racer, Stability, Neutral, Trail, Track
 
         // This looks messy, interfaces will possibly fix this??
-        public Shoe(int size, string type, string name, double price, int stockorderlevel, string supplier)
+        public Shoe(int size, ShoeType type, string name, double price, int stockorderlevel, string supplier)
             : base(name, price, stockorderlevel, supplier)
         {
             this.size = size;
@@ -62,7 +62,7 @@ namespace OOP_Assignment
             get { return size; }
             set { size = value; }
         }
-        public string Type
+        public ShoeType Type
         {
             get { return type; }
             set { type = value; }

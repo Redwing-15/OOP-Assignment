@@ -63,7 +63,9 @@
             label2 = new Label();
             R_restockAmountEntry = new NumericUpDown();
             createPage = new TabPage();
+            button2 = new Button();
             button1 = new Button();
+            button3 = new Button();
             tabControl1.SuspendLayout();
             transactionsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)T_addFundsEntry).BeginInit();
@@ -436,6 +438,8 @@
             // 
             // createPage
             // 
+            createPage.Controls.Add(button3);
+            createPage.Controls.Add(button2);
             createPage.Controls.Add(button1);
             createPage.Location = new Point(4, 29);
             createPage.Name = "createPage";
@@ -443,6 +447,16 @@
             createPage.TabIndex = 2;
             createPage.Text = "Create New";
             createPage.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(315, 156);
+            button2.Name = "button2";
+            button2.Size = new Size(145, 29);
+            button2.TabIndex = 1;
+            button2.Text = "Create Customer";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -453,6 +467,16 @@
             button1.Text = "Create Item";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(315, 204);
+            button3.Name = "button3";
+            button3.Size = new Size(132, 29);
+            button3.TabIndex = 2;
+            button3.Text = "Create Supplier";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // Form1
             // 
@@ -512,5 +536,7 @@
         private Label label12;
         private TabPage createPage;
         private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }

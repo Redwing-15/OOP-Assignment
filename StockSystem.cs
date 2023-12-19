@@ -17,6 +17,7 @@ namespace OOP_Assignment
         List<Customer> customers = new List<Customer>();
         List<Item> items = new List<Item>();
 
+        // Populates system with customers, suppliers and items
         public StockSystem()
         {
             customers.Add(new Customer("Reece", "rf287@canterbury.ac.uk", 50));

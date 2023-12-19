@@ -257,7 +257,17 @@ namespace OOP_Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            system.add_item("Bag", "MIKE Heritage", 30, 20, 15, "MIKE", new Dictionary<string, string> {{ "Capacity", "25" }});
+            system.add_item("Bag", "MIKE Heritage", 30, 20, 15, "MIKE", new Dictionary<string, string> { { "Capacity", "25" } });
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            system.add_customer("Brain", "brain@brian.com", 10);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            system.add_supplier("ADIBAS");
         }
     }
 }

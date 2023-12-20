@@ -1,11 +1,3 @@
-// BIG TODO:
-// UNIT TEST??
-//
-// OPTIONAL FUNCTIONALITY:
-// ADD ENUMS FOR ITEM TYPES (Clothing, Shoe, Bag, Nutrition, Watch)
-// ENHANCE CREATE ERROR HANDLING BY HANDLING CORRECT DATATYPES
-// ADD QUICK RESTOCK ALL BUTTON
-
 namespace OOP_Assignment
 {
     internal sealed class StockSystem

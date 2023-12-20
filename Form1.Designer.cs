@@ -146,6 +146,7 @@
             C_watchRestockEntry = new NumericUpDown();
             C_watchPriceEntry = new NumericUpDown();
             C_itemCombobox = new ComboBox();
+            R_restockAllButton = new Button();
             tabControl1.SuspendLayout();
             transactionsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)T_addFundsEntry).BeginInit();
@@ -381,6 +382,7 @@
             // 
             // restockPage
             // 
+            restockPage.Controls.Add(R_restockAllButton);
             restockPage.Controls.Add(R_supplierSelectCombobox);
             restockPage.Controls.Add(label11);
             restockPage.Controls.Add(R_supplierTextbbox);
@@ -475,7 +477,7 @@
             R_restockableItemsListbox.Items.AddRange(new object[] { " " });
             R_restockableItemsListbox.Location = new Point(6, 93);
             R_restockableItemsListbox.Name = "R_restockableItemsListbox";
-            R_restockableItemsListbox.Size = new Size(215, 304);
+            R_restockableItemsListbox.Size = new Size(215, 264);
             R_restockableItemsListbox.TabIndex = 15;
             R_restockableItemsListbox.SelectedIndexChanged += R_restockableItemsListbox_SelectedIndexChanged;
             // 
@@ -1360,6 +1362,16 @@
             C_itemCombobox.TabIndex = 0;
             C_itemCombobox.SelectedIndexChanged += C_itemCombobox_SelectedIndexChanged;
             // 
+            // R_restockAllButton
+            // 
+            R_restockAllButton.Location = new Point(63, 363);
+            R_restockAllButton.Name = "R_restockAllButton";
+            R_restockAllButton.Size = new Size(94, 29);
+            R_restockAllButton.TabIndex = 23;
+            R_restockAllButton.Text = "Restock All";
+            R_restockAllButton.UseVisualStyleBackColor = true;
+            R_restockAllButton.Click += R_restockAllButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1528,5 +1540,6 @@
         private NumericUpDown C_watchRestockEntry;
         private NumericUpDown C_watchPriceEntry;
         private NumericUpDown C_capacityEntry;
+        private Button R_restockAllButton;
     }
 }

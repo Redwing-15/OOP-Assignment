@@ -256,7 +256,36 @@ namespace OOP_Assignment
                     if (entry.Stock >= entry.StockOrderLevel) continue;
                     R_restockableItemsListbox.Items.Add($"\"{entry.Name}\"  {entry.Stock}/{entry.StockOrderLevel}");
                 }
+            }
+        }
 
+        private void R_restockAllButton_Click(object sender, EventArgs e)
+        {
+            foreach (Item entry in system.Items)
+            {
+                if (entry.Stock > entry.StockOrderLevel) continue;
+                entry.Stock = (int)(entry.StockOrderLevel * 1.5);
+            }
+            if (R_itemCombobox.SelectedIndex != -1)
+            {
+                Item item = system.get_item(R_itemCombobox.SelectedIndex);
+                R_stockTextbox.Text = item.Stock.ToString();
+            }
+
+            R_restockableItemsListbox.Items.Clear();
+            foreach (Item entry in system.Items)
+            {
+                if (R_supplierSelectCombobox.SelectedIndex < 1)
+                {
+                    if (entry.Stock >= entry.StockOrderLevel) continue;
+                    R_restockableItemsListbox.Items.Add($"\"{entry.Name}\"  {entry.Stock}/{entry.StockOrderLevel}");
+                }
+                else
+                {
+                    if (entry.Supplier != R_supplierSelectCombobox.Text) continue;
+                    if (entry.Stock >= entry.StockOrderLevel) continue;
+                    R_restockableItemsListbox.Items.Add($"\"{entry.Name}\"  {entry.Stock}/{entry.StockOrderLevel}");
+                }
             }
         }
 
@@ -342,7 +371,7 @@ namespace OOP_Assignment
 
         private void C_itemCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             C_createControl.TabPages.Clear();
             switch (C_itemCombobox.SelectedIndex)
             {

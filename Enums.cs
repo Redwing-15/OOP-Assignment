@@ -1,5 +1,14 @@
 namespace OOP_Assignment
 {
+    enum ItemType
+    {
+        Clothing,
+        Shoe,
+        Bag,
+        Nutrition,
+        Watch
+    }
+
     enum ClothingSize
     {
         XS, S, M, L, XL, XXL
